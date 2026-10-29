@@ -92,11 +92,11 @@ The benchmark compares three mutually exclusive image preprocessing conditions a
        ▼            ▼            ▼                              │
   ┌─────────┐  ┌─────────┐  ┌─────────┐                         │
   │  Arm A  │  │  Arm B  │  │  Arm C  │                         │
-  │  (Raw)  │  │ (MGGAN) │  │(Masked) │                         │
+  │  (Raw)  │  │(Inpaint)│  │(Masked) │                         │
   └────┬────┘  └────┬────┘  └────┬────┘                         │
        │            │            │                              │
        │            │            └─ Set artifact pixels to 0 ───┤
-       │            └─ Run inpainting through verified MGGAN ───┤
+       │            └─ Run harmonic boundary inpainting ────────┤
        └────────────── Keep raw scan intact ────────────────────┤
                                                                 ▼
                                                    Identical Training & Eval
@@ -106,11 +106,11 @@ The benchmark compares three mutually exclusive image preprocessing conditions a
 - **Input**: Original B-mode ultrasound image with all clinician measurement calipers, crosses, text labels, and overlay markers intact.
 - **Purpose**: Establishes the baseline performance of standard models when shortcut cues are available during training and internal testing.
 
-### 3.2 Arm B — Generative Inpainting (MGGAN / Verified Inpainter)
-- **Input**: Image processed through a verified generative inpainter using the corresponding binary annotation artifact mask $M_{art}$.
-- **Reference Model**: Mask-Guided GAN (MGGAN) utilizing Fast Fourier Convolutions (FFCs) and Squeeze-and-Excitation attention blocks (Wang et al., 2023), or an explicitly verified, open-source ultrasound inpainter (e.g., IOPaint/LaMa with documented configuration).
-- **Constraint**: Inpainting is applied *only* within the region defined by $M_{art}$ dilated by a configurable kernel radius $r_{dil} \in [1, 3]$ pixels to prevent caliper boundary bleed. All exterior pixels $x \notin M_{art}$ must remain mathematically identical to the source image.
-- **Provenance**: Model checkpoint hash, weights URL, generator configuration, and execution environment must be logged in the experiment manifest.
+### 3.2 Arm B — Inpainting Baseline (Harmonic / Boundary Inpainting Reference)
+- **Input**: Image processed through an inpainter using the corresponding binary annotation artifact mask $M_{art}$ dilated by $r_{dil} = 2$ pixels.
+- **Reference Model**: Boundary-constrained Fast Marching Harmonic/PDE inpainting (Telea / Navier-Stokes). The motivating literature proposed Mask-Guided GAN (MGGAN; Wang et al., 2023), but MGGAN model weights were held by the original authors and unreleased. The operational benchmark executes harmonic boundary inpainting, providing a reproducible, mathematically bounded inpainting baseline. Deep generative inpainting with MGGAN is explicitly documented as unexecuted.
+- **Constraint**: Inpainting is applied *only* within the region defined by $M_{art}$ dilated by a configurable kernel radius $r_{dil} \in [1, 3]$ pixels to prevent caliper boundary bleed. All exterior pixels $x \notin M_{art}$ must remain mathematically identical to the source image ($MAE_{ext} = 0.000000, PSNR_{ext} = \infty$).
+- **Provenance**: Inpainting algorithm configuration and execution environment are logged in the experiment manifest.
 
 ### 3.3 Arm C — Non-Generative Masking (Zero / Neutral Occlusion)
 - **Input**: Image processed by setting all pixels inside the annotation artifact mask $M_{art}$ (dilated by $r_{dil}$) to a constant neutral value:
@@ -262,7 +262,7 @@ To resolve this paradox, the evaluation protocol establishes a **Tri-Partition E
   - *Hard Rule*: Large deep learning training loops and batch generative inpainting are never executed on this CPU-only host.
 - **External GPU Compute (Google Colab / Kaggle GPU Runtime)**:
   - Deep learning model training (ConvNeXt, EfficientNet).
-  - Batch MGGAN / inpainting execution.
+  - Batch inpainting execution.
   - Post-hoc temperature scaling and bootstrap metric calculation.
   - Generates standardized prediction JSONs, metric CSVs, and checkpoint weights, synchronized back to OCI repository via documented manifest protocols.
 

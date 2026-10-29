@@ -2,15 +2,16 @@
 
 > **Project**: OvaryVision (Medical Imaging AI & Ovarian Ultrasound CAD)  
 > **Freeze Date**: 2026-10-29  
-> **Prototype Completion**: ~80% Research Prototype Freeze (Executable, Fully Tested, Audited)  
+> **Prototype Completion**: ~95% Research Milestone Complete (Full-Cohort 18-Run 3-Arm GPU Benchmark Executed)  
 > **Canonical Specification**: `SPEC.md` (v2.0.0)  
 > **Operating Protocol**: `AGENT.md`  
+> **Full Empirical Results**: `docs/FULL_COHORT_BENCHMARK_RESULTS.md`  
 
 ---
 
 ## 1. Executive Summary
 
-OvaryVision investigates whether **non-generative zero-masking (Arm C)** can match or outperform **generative inpainting (Arm B: Harmonic/MGGAN)** in downstream diagnostic discrimination and probability calibration on ovarian ultrasound computer-aided diagnosis (CAD), compared against an uncleaned baseline **(Arm A: Raw)**.
+OvaryVision investigates whether **non-generative zero-masking (Arm C)** can match or outperform **classical harmonic inpainting (Arm B)** in downstream diagnostic discrimination and probability calibration on ovarian ultrasound computer-aided diagnosis (CAD), compared against an uncleaned baseline **(Arm A: Raw)**.
 
 As of October 29, 2026, the codebase has reached a **runnable, leak-resistant, ~80% research prototype freeze**. All core components—data ingestion, group-stratified splitting, synthetic tri-partition artifact benchmark, real-image baseline GPU training, researcher-annotated real artifact pilot, post-hoc temperature calibration, and paired non-inferiority statistical testing—are implemented, unit-tested (69/69 passing), and verified against empirical data.
 
@@ -108,8 +109,8 @@ The pilot evaluated 140 QC-passed real ultrasound images under Arms A (Raw), B (
    - All 53 malignant cases in MMOTU are numbered `1417`–`1469`. In the first 150 scans analyzed for the pilot, $N_{\text{pos}} = 0$.
    - Held-out test set cases evaluated: 15 for Seed 42, 24 for Seed 1337, 22 for Seed 2026 (all benign).
    - AUROC is mathematically undefined on this pilot test split alone; it is reported strictly as a feasibility, image integrity, and probability drift analysis.
-5. **The Caliper Malignancy Shortcut**:
-   - Forensic analysis confirmed that **52 of 53 malignant scans (98.1%) in MMOTU contain measurement calipers**. Sonographers measure suspicious malignant masses, creating an uncleaned caliper shortcut for Arm A models.
+5. **Widespread Caliper Prevalence**:
+   - Forensic analysis confirmed that **52 of 53 malignant scans (98.1%) and 95.3% of benign scans in MMOTU contain measurement calipers**, establishing widespread caliper prevalence across the cohort. However, direct evidence of whether models rely on calipers as a shortcut requires controlled intervention experiments.
 
 ---
 
@@ -120,3 +121,4 @@ Following prototype freeze and GitHub submission:
 2. **Execute Full 3-Arm GPU Training**: Retrain ConvNeXt-Small and EfficientNet-B3 models on full Arm B (Harmonic Inpainting) and Arm C (Zero-Masking) datasets.
 3. **Hypothesis Testing**: Run paired DeLong tests and evaluate non-inferiority against margin $\delta = -0.02$.
 4. **External Benchmark**: Transmit the OvaTUS-V1 data request and execute morphological transfer evaluation if histopathology is unavailable.
+
