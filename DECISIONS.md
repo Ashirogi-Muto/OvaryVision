@@ -272,3 +272,38 @@ This document is an **append-only** log of all fundamental architectural, scient
   - Prevents conflating acoustic morphology with pathological histology.
 - **Consequences**: `docs/OVATUS_ACCESS_REQUEST.md` finalized with exact transmission details and marked as DRAFT ONLY / PENDING USER TRANSMISSION. Binary external CAD evaluation on OvaTUS-V1 remains blocked.
 
+---
+
+## Decision D21: Full 18-Run 3-Arm Benchmark Execution on NVIDIA Blackwell G4 Compute
+- **Date**: 2026-10-29
+- **Status**: Executed & Accepted
+- **Decision**: Execute the full $3 \times 2 \times 3 = 18$ run training matrix (Arms A, B, C across ConvNeXt-Small and EfficientNet-B3 across Seeds 42, 1337, 2026) on the full 1,469-scan MMOTU dataset using the Google Colab NVIDIA RTX PRO 6000 Blackwell Server Edition (95 GB VRAM).
+- **Rationale**:
+  - Provides empirical evaluation of the core research hypothesis on the complete cohort.
+  - Completed all 18 runs in 24.24 wall-clock minutes.
+  - Arm C (Zero-Masking) achieved higher macro-average test AUROC ($0.8280$) than Arm B (Harmonic Inpainting: $0.8089$), an observed delta of $+0.0192$ (+1.92%).
+  - Both artifact removal methods improved calibration over raw Arm A ($ECE = 0.0145 \rightarrow 0.0091$ for Arm B, $0.0096$ for Arm C).
+- **Consequences**: Raw predictions, checkpoints, and metrics persisted in `outputs/benchmark_runs/full_benchmark/` on branch `exp/full-cohort-benchmark`.
+
+---
+
+## Decision D22: Forensic Audit, Statistical Power Analysis, and Caliper Shortcut Assessment
+- **Date**: 2026-10-29
+- **Status**: Accepted
+- **Decision**: Formally document that internal test non-inferiority against $\delta = -0.02$ cannot be statistically declared on the MMOTU test partition because $N_{pos} = 8$ produces wide standard errors ($SE \in [0.0253, 0.0718]$) that inevitably push the one-sided 95% lower bound below $-0.02$. Prohibit claiming $p > 0.05$ as evidence of equivalence or non-inferiority. Remove the unsupported scalar sample size target ($N_{pos} \ge 140$) resulting from a dimensional arithmetic error, and require a formal paired-AUROC power model (Obuchowski 1997).
+- **Rationale**:
+  - Scientific integrity requires distinguishing between an observed positive trend across runs ($\hat{\Delta} = +0.0192$) and a powered formal non-inferiority proof.
+  - With $N_{pos} = 8$, sensitivity is quantized in steps of $12.5\%$.
+  - Widespread caliper prevalence (98.1% in malignant, 95.3% in benign) demonstrates that calipers are ubiquitous, but does not by itself prove classifier shortcut dependence. Controlled counterfactual experiments are required to establish shortcut exploitation.
+  - Cross-validation on MMOTU pools predictions across all 53 observed malignant cases but does not create additional independent cases.
+- **Consequences**: Authored `docs/FULL_COHORT_AUDIT_REPORT.md` and recommended dispatching the OvaTUS-V1 histology access request to obtain an adequately powered independent cohort.
+
+---
+
+## Decision D23: Methodological Clarification — Harmonic Boundary Inpainting vs MGGAN
+- **Date**: 2026-10-29
+- **Status**: Accepted
+- **Decision**: Update all canonical documentation to accurately identify Arm B as **Harmonic/PDE Inpainting (Fast Marching / Telea algorithm with 2px boundary dilation and exterior conservation)**, and explicitly disclose that deep generative MGGAN inpainting was not executed because MGGAN model weights were unreleased in the public MMOTU dataset.
+- **Rationale**: Absolute scientific honesty regarding executed code vs literature baseline.
+- **Consequences**: Updated `SPEC.md`, `README.md`, `docs/RESEARCH_PROTOCOL.md`, and `docs/FULL_COHORT_BENCHMARK_RESULTS.md`.
+

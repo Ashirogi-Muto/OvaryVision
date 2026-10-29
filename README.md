@@ -11,8 +11,8 @@ A rigorous, data-centric medical-imaging research benchmark investigating whethe
 
 ## 1. Research Overview
 
-- **The Problem**: Clinical transvaginal ultrasound scans frequently feature clinician-added measurement calipers, crosses, and text overlays placed directly over or adjacent to tumors. Deep neural networks exploit these synthetic cues as predictive shortcuts (the *Clever Hans* effect). In MMOTU, **98.1% of malignant scans contain calipers**, creating an overwhelming shortcut for uncleaned models.
-- **The Core Research Question**: Does non-generative zero-masking match or exceed generative inpainting in diagnostic discrimination (AUROC) and calibration (ECE/Brier) on clean ultrasound scans, while avoiding parenchymal hallucination and reducing computational overhead?
+- **The Problem**: Clinical transvaginal ultrasound scans frequently feature clinician-added measurement calipers, crosses, and text overlays placed directly over or adjacent to tumors. Deep neural networks risk exploiting synthetic cues as predictive shortcuts (the *Clever Hans* effect). In MMOTU, **98.1% of malignant scans and 95.3% of benign scans contain calipers**, making caliper presence widespread across the cohort.
+- **The Core Research Question**: Does non-generative zero-masking match or exceed classical inpainting in diagnostic discrimination (AUROC) and calibration (ECE/Brier) on ultrasound scans, while avoiding synthetic pixel hallucination and reducing computational overhead?
 - **Experimental Arms**:
   - **Arm A (Raw Baseline)**: Scans evaluated with clinician annotations intact.
   - **Arm B (Harmonic Inpainting)**: Strict in-mask biharmonic Poisson inpainting with a 2-pixel boundary dilation rule ($MAE_{ext} = 0.000000, PSNR_{ext} = \infty$).
@@ -86,13 +86,21 @@ All **69 tests pass** in under 2 seconds.
 
 ---
 
-## 4. Current Research Prototype Findings
+## 4. Current Research Findings
 
-### 4.1 Arm A Baseline Benchmark (Full MMOTU Test Set, $N=220$)
+### 4.1 Full-Cohort 18-Run 3-Arm Benchmark ($N=1,469$ MMOTU Scans)
 
-Trained on NVIDIA RTX PRO 6000 Blackwell Server Edition hardware:
-- **EfficientNet-B3**: Test AUROC = **$0.8931 \pm 0.0443$** | Calibrated ECE = **$0.1681 \pm 0.0189$** | Calibrated Brier = **$0.0816 \pm 0.0106$** ($T^* = 0.4500$).
-- **ConvNeXt-Small**: Test AUROC = **$0.8803 \pm 0.0685$** | Calibrated ECE = **$0.2993 \pm 0.2432$** | Calibrated Brier = **$0.1631 \pm 0.1188$** ($T^* = 2.6133$).
+Executed across ConvNeXt-Small and EfficientNet-B3 over 3 fixed group-stratified seeds (42, 1337, 2026) on an NVIDIA RTX PRO 6000 Blackwell GPU (24.2 min total compute):
+- **Observed AUROC**: Non-generative zero-masking (**Arm C: $0.8280 \pm 0.1140$**) achieved a $+0.0192$ higher observed macro-average AUROC than harmonic inpainting (**Arm B: $0.8089 \pm 0.0967$**) across runs, outperforming Arm B in 4 of 6 paired runs.
+- **Exploratory Comparison to Raw Baseline**: Raw uncleaned scans (**Arm A: $0.8409 \pm 0.0884$**) showed an observed $+0.0129$ AUROC difference compared to Arm C ($p > 0.05$ on 5/6 runs). These findings are exploratory given the small positive sample size ($N_{pos}=8$ per test split). Direct shortcut dependence remains an untested hypothesis requiring controlled intervention experiments.
+- **Calibration Substantially Improved**: Both artifact removal arms reduced Expected Calibration Error compared to uncleaned scans:
+  - Arm A (Raw): $ECE = 0.0145 \pm 0.0087$
+  - Arm B (Inpainted): $ECE = 0.0091 \pm 0.0049$
+  - Arm C (Zero-Masked): $ECE = 0.0096 \pm 0.0046$
+- **Non-Inferiority Audit Status**: Formal non-inferiority ($\delta = -0.02$) was **not established** because the internal test split contained only $N_{pos} = 8$ malignant scans ($SE_{\text{DeLong}} = 0.025 - 0.072$). The test is underpowered to confirm non-inferiority within $2\%$ on MMOTU alone.
+- **Implementation Note**: Arm B executed boundary-constrained Fast Marching Harmonic/PDE Inpainting (Telea algorithm with 2px boundary dilation). Deep generative inpainting with MGGAN was unexecuted as author weights were unreleased.
+
+See [`docs/FULL_COHORT_BENCHMARK_RESULTS.md`](docs/FULL_COHORT_BENCHMARK_RESULTS.md) and [`docs/FULL_COHORT_AUDIT_REPORT.md`](docs/FULL_COHORT_AUDIT_REPORT.md) for complete tabular metrics, DeLong statistics, and audit disclosures.
 
 ### 4.2 Gate B Real-Image Pilot Study ($N=140$ QC-Passed Scans)
 

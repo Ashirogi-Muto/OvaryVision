@@ -26,7 +26,7 @@ The study follows a standardized, paired comparative evaluation design across th
          ┌──────────┴──────────┐        │                   │
          ▼          ▼          ▼        │                   │
        Arm A      Arm B      Arm C      │                   │
-       (Raw)    (MGGAN)    (Masked)     │                   │
+       (Raw)    (Inpaint)   (Masked)    │                   │
          │          │          │        │                   │
          └──────────┼──────────┘        │                   │
                     ▼                   ▼                   ▼
@@ -51,13 +51,14 @@ The study follows a standardized, paired comparative evaluation design across th
 - **Transform**: None. Measurement calipers, crosses, boundary annotations, and text are left untouched.
 - **Purpose**: Quantifies how much deep networks rely on synthetic annotation cues during training.
 
-### Arm B — Generative Inpainting (MGGAN / Deep Inpainting)
+### Arm B — Inpainting (Harmonic / Boundary Inpainting Reference)
 - **Input**: Original image + binary annotation artifact mask ($M_{art}$).
 - **Transformation**:
   1. $M_{art}$ is dilated by $r_{dil} = 2$ pixels using a morphological cross structuring element to prevent boundary artifacts.
-  2. Generative inpainting fills pixels within the dilated mask using Fast Fourier Convolutions (FFCs) pre-trained on ultrasound images (Wang et al., 2023).
+  2. Inpainting fills pixels within the dilated mask using boundary-constrained fast-marching harmonic diffusion (Telea / Navier-Stokes).
   3. Strict exterior constraint: All pixels outside the dilated mask are preserved exactly:
      $$I_B(u, v) = \begin{cases} I_{inpaint}(u, v), & (u, v) \in \text{dilate}(M_{art}) \\ I_A(u, v), & (u, v) \notin \text{dilate}(M_{art}) \end{cases}$$
+- **Literature Context & Provenance Disclosure**: While the motivating literature (Wang et al., 2023) proposed Mask-Guided GAN (MGGAN), MGGAN model weights were not publicly packaged with the MMOTU distribution. The operational benchmark executes harmonic boundary inpainting, providing a mathematically bounded, deterministic inpainting baseline without unverified generative pixel hallucination. Deep generative inpainting remains unexecuted.
 
 ### Arm C — Non-Generative Masking (Zero / Neutral Value Occlusion)
 - **Input**: Original image + binary annotation artifact mask ($M_{art}$).

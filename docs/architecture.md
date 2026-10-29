@@ -32,7 +32,7 @@ The codebase is structured around a decoupled, data-centric research workflow:
 │                                                                             │
 │  ┌───────────────────────────────────────────────────────────────────────┐  │
 │  │                    3-Arm Preprocessing Engine                         │  │
-│  │  Arm A: Raw          Arm B: MGGAN Inpainting     Arm C: Zero-Masking  │  │
+│  │  Arm A: Raw       Arm B: Harmonic Inpainting     Arm C: Zero-Masking  │  │
 │  └───────────────────────────────────┬───────────────────────────────────┘  │
 │                                      │                                      │
 │                                      ▼                                      │

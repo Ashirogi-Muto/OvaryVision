@@ -64,37 +64,53 @@ All 18 models were trained with Class-Weighted Focal Loss ($\gamma = 2.0$), cali
    - Arm A (Uncleaned): $ECE = 0.0145 \pm 0.0087$
    - Arm B (Inpainted): $ECE = 0.0091 \pm 0.0049$ (37.2% reduction in calibration error)
    - Arm C (Masked): $ECE = 0.0096 \pm 0.0046$ (33.8% reduction in calibration error)
-3. **Absence of Caliper Collapse**:
-   Comparing Arm A (Raw, with caliper shortcut) to Arm C (Masked): the mean AUROC difference is only $0.013$ ($0.8409$ vs $0.8280$). Removing calipers does not cause deep feature representation to degrade, demonstrating that diagnostic signal is predominantly derived from true ovarian parenchyma.
+3. **Exploratory Comparison Between Raw and Masked Models**:
+   Comparing Arm A (Raw scans) to Arm C (Zero-masked scans): the observed macro-average test AUROC difference across runs was $0.0129$ ($0.8409$ vs $0.8280$). In this 8-case test set, masking detected calipers did not produce an observed collapse in test discrimination, though this observation remains exploratory due to small positive test counts ($N_{pos}=8$) and substantial variance across random seeds. Direct proof of whether models rely on calipers as a discriminative shortcut requires controlled counterfactual intervention or attribution experiments, which have not yet been performed.
 
 ---
 
 ## 4. Paired DeLong & Stratified Bootstrap Non-Inferiority Analysis
 
 Evaluation of the primary pre-registered hypothesis:
-$$H_0: \text{AUC}_{\text{Arm C}} - \text{AUC}_{\text{Arm B}} \le -0.02 \quad \text{vs} \quad H_1: \text{AUC}_{\text{Arm C}} - \text{AUC}_{\text{Arm B}} > -0.02$$
+$$H_0: \text{AUC}_{\text{Arm C}} - \text{AUC}_{\text{Arm B}} \le -0.02 \quad \text{vs} \quad H_1: \text{AUC}_{\text{Arm C}} - \text{AUC}_{\text{Arm B}} > -0.02 \quad (\alpha = 0.05)$$
 
-| Architecture | Seed | $\text{AUC}_B$ (Inpaint) | $\text{AUC}_C$ (Mask) | Difference ($\Delta_{C-B}$) | DeLong $p$-value (2-tailed) | 95% Bootstrap CI |
-|---|---|---|---|---|---|---|
-| ConvNeXt-Small | 42 | 0.9292 | 0.9239 | -0.0053 | 0.8337 | [-0.0584, +0.0377] |
-| ConvNeXt-Small | 1337 | 0.8308 | 0.8373 | **+0.0065** | 0.8310 | [-0.0425, +0.0690] |
-| ConvNeXt-Small | 2026 | 0.7288 | 0.7117 | -0.0171 | 0.6459 | [-0.0908, +0.0495] |
-| EfficientNet-B3 | 42 | 0.8620 | 0.8909 | **+0.0289** | 0.4702 | [-0.0431, +0.1103] |
-| EfficientNet-B3 | 1337 | 0.8402 | 0.9381 | **+0.0979** | 0.1728 | [+0.0088, +0.2659] |
-| EfficientNet-B3 | 2026 | 0.6621 | 0.6663 | **+0.0041** | 0.9377 | [-0.0920, +0.1109] |
+The one-sided 95% lower confidence bound is $\hat{\Delta}_{\text{observed}} - 1.6449 \cdot SE_{\text{DeLong}}$. Non-inferiority is declared if and only if $\text{Lower Bound} > -0.0200$.
 
-### Statistical Synthesis:
-- In **4 of the 6 runs (66.7%)**, Arm C directly outperformed Arm B.
-- In the remaining 2 runs, Arm C was within 0.5% (Seed 42) and 1.7% (Seed 2026) of Arm B.
-- Mean paired difference across all runs is **$+0.0192$** in favor of zero-masking.
-- The 95% bootstrap confidence intervals span zero on 5 of 6 runs, indicating that the two methods are statistically indistinguishable in discrimination power, while zero-masking eliminates the risk of generative pixel hallucination.
+| Architecture | Seed | $\text{AUC}_B$ (Inpaint) | $\text{AUC}_C$ (Mask) | Difference ($\hat{\Delta}_{C-B}$) | DeLong $p$-value (2-tailed) | One-Sided Non-Inf $p_{\text{NI}}$ | 95% Bootstrap CI | Non-Inferiority Declared? |
+|---|---|---|---|---|---|---|---|---|
+| ConvNeXt-Small | 42 | 0.9292 | 0.9239 | -0.0053 | 0.8337 | 0.2805 | [-0.0584, +0.0377] | **False** (Lower 95%: -0.0469) |
+| ConvNeXt-Small | 1337 | 0.8308 | 0.8373 | **+0.0065** | 0.8310 | 0.1917 | [-0.0425, +0.0690] | **False** (Lower 95%: -0.0435) |
+| ConvNeXt-Small | 2026 | 0.7288 | 0.7117 | -0.0171 | 0.6459 | 0.4689 | [-0.0908, +0.0495] | **False** (Lower 95%: -0.0783) |
+| EfficientNet-B3 | 42 | 0.8620 | 0.8909 | **+0.0289** | 0.4702 | 0.1108 | [-0.0431, +0.1103] | **False** (Lower 95%: -0.0369) |
+| EfficientNet-B3 | 1337 | 0.8402 | 0.9381 | **+0.0979** | 0.1728 | 0.0503 | [+0.0088, +0.2659] | **False** (Lower 95%: -0.0202) |
+| EfficientNet-B3 | 2026 | 0.6621 | 0.6663 | **+0.0041** | 0.9377 | 0.3237 | [-0.0920, +0.1109] | **False** (Lower 95%: -0.0827) |
+
+### Rigorous Statistical Synthesis:
+- **Observed Advantage**: In **4 of the 6 runs (66.7%)**, Arm C achieved a higher observed AUROC than Arm B (mean paired difference across runs: **$+0.0192$**).
+- **Formal Non-Inferiority Result**: Non-inferiority within the narrow margin $\delta = -0.02$ was **not formally established** in any individual run. This failure is a direct consequence of low statistical power on an internal test split containing only **$N_{pos} = 8$ malignant scans** ($SE_{\text{DeLong}} = 0.0253 - 0.0718$).
+- **Scientific Caveat**: The fact that $p > 0.05$ across pairwise DeLong tests must **never** be interpreted as proof of equivalence or non-inferiority ("absence of evidence is not evidence of absence"). Definitive evaluation of non-inferiority requires an adequately powered independent external test cohort with verified histopathology. An unsupported scalar sample size target cannot substitute for a full paired-AUROC power model.
 
 ---
 
-## 5. Summary of Deliverables & Artifacts Generated
+## 5. Artifact Mask Extraction & Quality Control (QC)
+
+- **Detection Rate**: Automated morphological extraction identified measurement calipers in **1,402 of 1,469 scans (95.4%)**.
+  - Malignant Scans: 52 of 53 (98.1%) contain calipers (mean tumor overlap: 5.02%, maximum 46.38%).
+  - Benign Scans: 1,350 of 1,416 (95.3%) contain calipers.
+- **QC Status**: 1,335 scans (90.9%) passed all QC criteria (area $\le 5\%$, tumor overlap $\le 50\%$). 67 scans were flagged empty (no caliper), 56 flagged tumor overlap, and 11 flagged excessive area.
+- **Visual Contact Sheets**:
+  - `outputs/qc/contact_sheets/malignant_cases_artifact_contact_sheet.png`: Complete contact sheet for all 53 malignant scans with overlaid caliper detections (yellow) and tumor boundaries (cyan contour).
+  - `outputs/qc/contact_sheets/benign_sample_artifact_contact_sheet.png`: 36 representative benign scans.
+- **Provenance Disclosure**: These masks were generated using automated high-intensity morphological filtering and are strictly separated from clinical tumor segmentation masks (`data/raw/mmotu/tumor_masks/`).
+
+---
+
+## 6. Summary of Deliverables & Artifacts Generated
 
 1. `outputs/benchmark_runs/full_benchmark/master_benchmark_summary.csv`: Complete run-level metrics for all 18 models.
 2. `outputs/benchmark_runs/full_benchmark/master_benchmark_summary.json`: Machine-readable summary for automated parsing.
 3. `outputs/benchmark_runs/full_benchmark/{run_name}/predictions.csv`: 18 test prediction CSVs with individual scan logits, calibrated probabilities, and true labels.
 4. `outputs/benchmark_runs/full_benchmark/{run_name}/metrics.json`: Detailed run logs with best epoch and optimal temperature parameters.
 5. `outputs/metrics/full_cohort_delong_results.csv`: Paired DeLong test statistics and bootstrap confidence intervals.
+6. `outputs/metrics/full_cohort_mask_qc_summary.csv`: Cohort-wide mask detection, area ratio, and tumor overlap metrics for all 1,469 scans.
+7. `outputs/qc/contact_sheets/`: Visual contact sheets for all 53 malignant cases and 36 representative benign cases.

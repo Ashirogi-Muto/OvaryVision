@@ -1,15 +1,15 @@
 # PROJECT_STATE.md — Continuous Project State Tracker: OvaryVision
 
 **Current Date / Timestamp**: 2026-10-29  
-**Current Phase**: Milestones 2 & 3 Complete; Analytical & GPU Pipeline Active  
-**Current Status**: Active Implementation  
-**Canonical Specification**: `SPEC.md` (v2.0.0)  
-**Audit Document**: `docs/MILESTONE_1_AUDIT.md`  
+**Current Phase**: Full 18-Run Benchmark & Forensic Scientific Audit Complete
+**Current Status**: Complete on `exp/full-cohort-benchmark` (Ready for User Review)
+**Canonical Specification**: `SPEC.md` (v2.0.0)
+**Audit Documents**: `docs/MILESTONE_1_AUDIT.md`, `docs/FULL_COHORT_AUDIT_REPORT.md`
 
 ---
 
 ## 1. Project Objective
-Establish a reproducible, leak-resistant, and clinically grounded data-centric benchmark comparing **Generative Inpainting (Arm B: MGGAN)** against **Non-Generative Masking (Arm C: Zero-Occlusion)** and **Raw Uncleaned Baseline (Arm A)** in ovarian ultrasound computer-aided diagnosis across internal (MMOTU) and independent external (OvaTUS-V1) cohorts.
+Establish a reproducible, leak-resistant, and clinically grounded data-centric benchmark comparing **Harmonic Inpainting (Arm B)** against **Non-Generative Masking (Arm C: Zero-Occlusion)** and **Raw Uncleaned Baseline (Arm A)** in ovarian ultrasound computer-aided diagnosis across internal (MMOTU) and independent external (OvaTUS-V1) cohorts.
 
 ---
 
@@ -20,11 +20,15 @@ Establish a reproducible, leak-resistant, and clinically grounded data-centric b
 | `SPEC.md` | Specification | Implemented | v2.0.0 Canonical research specification with audited assumptions |
 | `AGENT.md` | Operating Protocol & Memory | Implemented | Merged canonical agent memory and integrity rules |
 | `PROJECT_STATE.md` | Project Memory | Implemented | Live state file tracking deliverables and blockers |
-| `DECISIONS.md` | Decision Log | Implemented | Append-only architectural & methodology log (D01–D17) |
+| `DECISIONS.md` | Decision Log | Implemented | Append-only architectural & methodology log (D01–D23) |
 | `IMPLEMENTATION_PLAN.md` | Roadmap | Implemented | Dependency-aware milestones and task tracking |
 | `CHANGELOG.md` | History | Implemented | Foundation, Milestone 2, and Core Pipeline updates recorded |
 | `README.md` | Documentation | Implemented | Project entry point, CLI guide, and architecture |
 | `docs/RESEARCH_PROTOCOL.md` | Research Protocol | Implemented | Detailed 3-arm protocol, calibration & metrics |
+| `docs/FULL_COHORT_BENCHMARK_RESULTS.md` | Results Report | Implemented | 18-run benchmark report with macro-averages and metrics |
+| `docs/FULL_COHORT_AUDIT_REPORT.md` | Audit Report | Implemented | Forensic audit of cohort, power, non-inferiority, mask QC |
+| `scripts/audit_masks_and_generate_contact_sheets.py` | QC Tooling | Implemented | Mask QC extraction, area/overlap metrics, contact sheet renderer |
+| `outputs/qc/contact_sheets/` | Visual QC | Implemented | Contact sheets for all 53 malignant cases and 36 benign samples |
 | `docs/DATA_DICTIONARY.md` | Schemas | Implemented | Data schemas for manifests, audits, records & synthetic metrics |
 | `docs/EXPERIMENT_TRACKER.md` | Registry | Implemented | Reproducible experiment logging schema |
 | `docs/architecture.md` | Architecture | Implemented | System components and OCI/GPU boundary |

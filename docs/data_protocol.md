@@ -21,7 +21,7 @@ data/
 │   └── near_duplicate_clusters/ # Perceptual hash grouping tables
 ├── processed/
 │   ├── arm_a_raw/               # Normalized raw scans
-│   ├── arm_b_inpainted/         # Inpainted scans (MGGAN/LaMa)
+│   ├── arm_b_inpainted/         # Inpainted scans (Harmonic/PDE Inpainting)
 │   └── arm_c_masked/            # Non-generative zero-masked scans
 └── manifests/
     ├── mmotu_inventory.csv      # Complete image inventory
