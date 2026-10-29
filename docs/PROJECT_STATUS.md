@@ -2,9 +2,10 @@
 
 > **Project**: OvaryVision (Medical Imaging AI & Ovarian Ultrasound CAD)  
 > **Freeze Date**: 2026-10-29  
-> **Prototype Completion**: ~80% Research Prototype Freeze (Executable, Fully Tested, Audited)  
+> **Prototype Completion**: ~95% Research Milestone Complete (Full-Cohort 18-Run 3-Arm GPU Benchmark Executed)  
 > **Canonical Specification**: `SPEC.md` (v2.0.0)  
 > **Operating Protocol**: `AGENT.md`  
+> **Full Empirical Results**: `docs/FULL_COHORT_BENCHMARK_RESULTS.md`  
 
 ---
 
@@ -120,3 +121,4 @@ Following prototype freeze and GitHub submission:
 2. **Execute Full 3-Arm GPU Training**: Retrain ConvNeXt-Small and EfficientNet-B3 models on full Arm B (Harmonic Inpainting) and Arm C (Zero-Masking) datasets.
 3. **Hypothesis Testing**: Run paired DeLong tests and evaluate non-inferiority against margin $\delta = -0.02$.
 4. **External Benchmark**: Transmit the OvaTUS-V1 data request and execute morphological transfer evaluation if histopathology is unavailable.
+

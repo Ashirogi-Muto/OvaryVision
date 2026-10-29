@@ -1,0 +1,7 @@
+backbone,seed,auc_b,auc_c,delta_c_minus_b,delong_p_value,non_inferior,boot_ci_low,boot_ci_high
+convnext_small,42,0.9292,0.9239,-0.0053,0.8337,False,-0.0584,0.0377
+convnext_small,1337,0.8308,0.8373,0.0065,0.831,False,-0.0425,0.069
+convnext_small,2026,0.7288,0.7117,-0.0171,0.6459,False,-0.0908,0.0495
+efficientnet_b3,42,0.862,0.8909,0.0289,0.4702,False,-0.0431,0.1103
+efficientnet_b3,1337,0.8402,0.9381,0.0979,0.1728,False,0.0088,0.2659
+efficientnet_b3,2026,0.6621,0.6663,0.0041,0.9377,False,-0.092,0.1109
