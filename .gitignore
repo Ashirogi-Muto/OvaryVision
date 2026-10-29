@@ -1,0 +1,55 @@
+# Antigravity Agent Rules Mandated Ignores
+AGENT.md
+logs/
+.env
+.env.*
+!.env.example
+
+# Python caches, build artifacts, environments
+__pycache__/
+*.py[cod]
+*$py.class
+*.bak
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+
+# Credentials and secrets
+*.pem
+*.key
+*.token
+*.secret
+access_token
+*credentials*
+
+# Data and large model checkpoints (never commit raw/processed medical data or weights)
+data/raw/*
+!data/raw/README.md
+data/interim/*
+!data/interim/README.md
+data/processed/*
+!data/processed/README.md
+outputs/checkpoints/*
+!outputs/checkpoints/README.md
+outputs/benchmark_runs/*
+!outputs/benchmark_runs/README.md
+outputs/qc/*
+!outputs/qc/README.md
+outputs/logs/*
+
+# Large binary files & archives
+*.tar.gz
+*.tar
+*.zip
+*.pt
+*.pth
+
+# Temporary / Scratch
+scratch/
+.tmp/
+tmp/

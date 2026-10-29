@@ -1,0 +1,30 @@
+# Experiment configuration extending default.yaml for full 18-run benchmark
+experiment:
+  name: "ovaryvision_full_benchmark"
+  description: "3-Arm x 2-Backbone x 3-Seed Comparative Benchmark"
+  primary_dataset: "MMOTU_2D"
+  external_dataset: "OvaTUS_V1"
+
+matrix:
+  arms:
+    - "arm_a_raw"
+    - "arm_b_inpainted"
+    - "arm_c_masked"
+  backbones:
+    - "convnext_small"
+    - "efficientnet_b3"
+  seeds:
+    - 42
+    - 1337
+    - 2026
+
+splits:
+  train_ratio: 0.70
+  val_ratio: 0.15
+  test_ratio: 0.15
+  near_duplicate_hamming_threshold: 4
+
+texture_audit:
+  exterior_psnr_threshold_db: 50.0
+  dilation_margin_pixels: 10
+

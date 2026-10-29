@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ovaryvision"
+version = "0.1.0"
+description = "Data-centric benchmark comparing generative inpainting vs non-generative masking for ovarian ultrasound CAD"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "CC-BY-4.0"}
+authors = [
+    {name = "OvaryVision Research Team"}
+]
+keywords = ["medical-imaging", "ultrasound", "deep-learning", "inpainting", "masking", "calibration"]
+dependencies = [
+    "pydantic>=2.0",
+    "pyyaml>=6.0",
+    "pillow>=10.0",
+    "numpy>=1.24",
+    "pandas>=2.0",
+    "scipy>=1.11",
+    "click>=8.0"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov"
+]
+
+[project.scripts]
+ovaryvision = "ovaryvision.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short"

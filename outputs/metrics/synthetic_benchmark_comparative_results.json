@@ -1,0 +1,254 @@
+{
+  "total_cases": 3,
+  "cases": [
+    {
+      "case_id": "SYNTH_CASE_0001",
+      "mask_pixel_count": 375,
+      "mask_pixel_ratio": 0.005722,
+      "arm_a_raw": {
+        "evaluation_timestamp_utc": "2026-10-29T10:16:43.915088+00:00",
+        "global_mae": 0.9139,
+        "global_psnr": 25.6633,
+        "global_ssim": 0.9754,
+        "in_mask_mae": 159.7093,
+        "in_mask_psnr": 3.2388,
+        "in_mask_ssim": 0.0866,
+        "exterior_mae": 0.0,
+        "exterior_psnr": Infinity,
+        "exterior_ssim": 0.9805,
+        "local_texture_variance": {
+          "var_in_mask": 5172.6214,
+          "var_surrounding_band": 585.4462,
+          "delta_ltv": 4587.1752,
+          "band_pixel_count": 3649,
+          "mask_pixel_count": 375
+        },
+        "lpips": null,
+        "mask_pixel_ratio": 0.005722,
+        "scientific_limitations": [
+          "Controlled synthetic benchmark evaluates reconstruction of known digital overlays against known clean reference.",
+          "In real clinical ultrasound, underlying tissue occluded by clinician calipers is unobservable.",
+          "High synthetic PSNR/SSIM indicates geometric inpainting capability, but cannot prove absence of hallucination on real pathological scans."
+        ]
+      },
+      "arm_b_inpainted": {
+        "evaluation_timestamp_utc": "2026-10-29T10:16:43.983140+00:00",
+        "global_mae": 0.3515,
+        "global_psnr": 38.0763,
+        "global_ssim": 0.9856,
+        "in_mask_mae": 16.9333,
+        "in_mask_psnr": 21.5401,
+        "in_mask_ssim": 0.3254,
+        "exterior_mae": 0.2561,
+        "exterior_psnr": 39.3458,
+        "exterior_ssim": 0.9894,
+        "local_texture_variance": {
+          "var_in_mask": 73.2053,
+          "var_surrounding_band": 466.5504,
+          "delta_ltv": 393.3451,
+          "band_pixel_count": 3649,
+          "mask_pixel_count": 375
+        },
+        "lpips": null,
+        "mask_pixel_ratio": 0.005722,
+        "scientific_limitations": [
+          "Controlled synthetic benchmark evaluates reconstruction of known digital overlays against known clean reference.",
+          "In real clinical ultrasound, underlying tissue occluded by clinician calipers is unobservable.",
+          "High synthetic PSNR/SSIM indicates geometric inpainting capability, but cannot prove absence of hallucination on real pathological scans."
+        ]
+      },
+      "arm_c_masked": {
+        "evaluation_timestamp_utc": "2026-10-29T10:16:44.014987+00:00",
+        "global_mae": 0.7814,
+        "global_psnr": 31.9192,
+        "global_ssim": 0.9762,
+        "in_mask_mae": 37.136,
+        "in_mask_psnr": 15.2756,
+        "in_mask_ssim": 0.0813,
+        "exterior_mae": 0.5722,
+        "exterior_psnr": 33.2266,
+        "exterior_ssim": 0.9814,
+        "local_texture_variance": {
+          "var_in_mask": 0.0,
+          "var_surrounding_band": 732.6552,
+          "delta_ltv": 732.6552,
+          "band_pixel_count": 3649,
+          "mask_pixel_count": 375
+        },
+        "lpips": null,
+        "mask_pixel_ratio": 0.005722,
+        "scientific_limitations": [
+          "Controlled synthetic benchmark evaluates reconstruction of known digital overlays against known clean reference.",
+          "In real clinical ultrasound, underlying tissue occluded by clinician calipers is unobservable.",
+          "High synthetic PSNR/SSIM indicates geometric inpainting capability, but cannot prove absence of hallucination on real pathological scans."
+        ]
+      }
+    },
+    {
+      "case_id": "SYNTH_CASE_0002",
+      "mask_pixel_count": 584,
+      "mask_pixel_ratio": 0.008911,
+      "arm_a_raw": {
+        "evaluation_timestamp_utc": "2026-10-29T10:16:44.049321+00:00",
+        "global_mae": 1.2565,
+        "global_psnr": 24.573,
+        "global_ssim": 0.9673,
+        "in_mask_mae": 141.0051,
+        "in_mask_psnr": 4.0724,
+        "in_mask_ssim": 0.1112,
+        "exterior_mae": 0.0,
+        "exterior_psnr": Infinity,
+        "exterior_ssim": 0.975,
+        "local_texture_variance": {
+          "var_in_mask": 5310.405,
+          "var_surrounding_band": 528.5793,
+          "delta_ltv": 4781.8258,
+          "band_pixel_count": 4843,
+          "mask_pixel_count": 584
+        },
+        "lpips": null,
+        "mask_pixel_ratio": 0.008911,
+        "scientific_limitations": [
+          "Controlled synthetic benchmark evaluates reconstruction of known digital overlays against known clean reference.",
+          "In real clinical ultrasound, underlying tissue occluded by clinician calipers is unobservable.",
+          "High synthetic PSNR/SSIM indicates geometric inpainting capability, but cannot prove absence of hallucination on real pathological scans."
+        ]
+      },
+      "arm_b_inpainted": {
+        "evaluation_timestamp_utc": "2026-10-29T10:16:44.115482+00:00",
+        "global_mae": 0.5467,
+        "global_psnr": 35.8969,
+        "global_ssim": 0.9781,
+        "in_mask_mae": 19.1318,
+        "in_mask_psnr": 20.4528,
+        "in_mask_ssim": 0.2553,
+        "exterior_mae": 0.3796,
+        "exterior_psnr": 37.4831,
+        "exterior_ssim": 0.9846,
+        "local_texture_variance": {
+          "var_in_mask": 25.7914,
+          "var_surrounding_band": 410.2264,
+          "delta_ltv": 384.435,
+          "band_pixel_count": 4843,
+          "mask_pixel_count": 584
+        },
+        "lpips": null,
+        "mask_pixel_ratio": 0.008911,
+        "scientific_limitations": [
+          "Controlled synthetic benchmark evaluates reconstruction of known digital overlays against known clean reference.",
+          "In real clinical ultrasound, underlying tissue occluded by clinician calipers is unobservable.",
+          "High synthetic PSNR/SSIM indicates geometric inpainting capability, but cannot prove absence of hallucination on real pathological scans."
+        ]
+      },
+      "arm_c_masked": {
+        "evaluation_timestamp_utc": "2026-10-29T10:16:44.147258+00:00",
+        "global_mae": 1.2191,
+        "global_psnr": 29.8419,
+        "global_ssim": 0.9663,
+        "in_mask_mae": 43.1079,
+        "in_mask_psnr": 14.303,
+        "in_mask_ssim": 0.0691,
+        "exterior_mae": 0.8425,
+        "exterior_psnr": 31.4717,
+        "exterior_ssim": 0.9743,
+        "local_texture_variance": {
+          "var_in_mask": 0.0,
+          "var_surrounding_band": 761.1637,
+          "delta_ltv": 761.1637,
+          "band_pixel_count": 4843,
+          "mask_pixel_count": 584
+        },
+        "lpips": null,
+        "mask_pixel_ratio": 0.008911,
+        "scientific_limitations": [
+          "Controlled synthetic benchmark evaluates reconstruction of known digital overlays against known clean reference.",
+          "In real clinical ultrasound, underlying tissue occluded by clinician calipers is unobservable.",
+          "High synthetic PSNR/SSIM indicates geometric inpainting capability, but cannot prove absence of hallucination on real pathological scans."
+        ]
+      }
+    },
+    {
+      "case_id": "SYNTH_CASE_0003",
+      "mask_pixel_count": 463,
+      "mask_pixel_ratio": 0.007065,
+      "arm_a_raw": {
+        "evaluation_timestamp_utc": "2026-10-29T10:16:44.180437+00:00",
+        "global_mae": 0.9976,
+        "global_psnr": 25.5365,
+        "global_ssim": 0.9722,
+        "in_mask_mae": 141.2117,
+        "in_mask_psnr": 4.0275,
+        "in_mask_ssim": 0.1357,
+        "exterior_mae": 0.0,
+        "exterior_psnr": Infinity,
+        "exterior_ssim": 0.9782,
+        "local_texture_variance": {
+          "var_in_mask": 5768.8379,
+          "var_surrounding_band": 536.0297,
+          "delta_ltv": 5232.8081,
+          "band_pixel_count": 4338,
+          "mask_pixel_count": 463
+        },
+        "lpips": null,
+        "mask_pixel_ratio": 0.007065,
+        "scientific_limitations": [
+          "Controlled synthetic benchmark evaluates reconstruction of known digital overlays against known clean reference.",
+          "In real clinical ultrasound, underlying tissue occluded by clinician calipers is unobservable.",
+          "High synthetic PSNR/SSIM indicates geometric inpainting capability, but cannot prove absence of hallucination on real pathological scans."
+        ]
+      },
+      "arm_b_inpainted": {
+        "evaluation_timestamp_utc": "2026-10-29T10:16:44.243519+00:00",
+        "global_mae": 0.4585,
+        "global_psnr": 36.6075,
+        "global_ssim": 0.9819,
+        "in_mask_mae": 19.7624,
+        "in_mask_psnr": 20.2584,
+        "in_mask_ssim": 0.2749,
+        "exterior_mae": 0.3211,
+        "exterior_psnr": 38.1556,
+        "exterior_ssim": 0.987,
+        "local_texture_variance": {
+          "var_in_mask": 27.4441,
+          "var_surrounding_band": 422.1543,
+          "delta_ltv": 394.7103,
+          "band_pixel_count": 4338,
+          "mask_pixel_count": 463
+        },
+        "lpips": null,
+        "mask_pixel_ratio": 0.007065,
+        "scientific_limitations": [
+          "Controlled synthetic benchmark evaluates reconstruction of known digital overlays against known clean reference.",
+          "In real clinical ultrasound, underlying tissue occluded by clinician calipers is unobservable.",
+          "High synthetic PSNR/SSIM indicates geometric inpainting capability, but cannot prove absence of hallucination on real pathological scans."
+        ]
+      },
+      "arm_c_masked": {
+        "evaluation_timestamp_utc": "2026-10-29T10:16:44.274777+00:00",
+        "global_mae": 1.0174,
+        "global_psnr": 30.5909,
+        "global_ssim": 0.9708,
+        "in_mask_mae": 42.5335,
+        "in_mask_psnr": 14.3129,
+        "in_mask_ssim": 0.0719,
+        "exterior_mae": 0.7221,
+        "exterior_psnr": 32.1082,
+        "exterior_ssim": 0.9772,
+        "local_texture_variance": {
+          "var_in_mask": 0.0,
+          "var_surrounding_band": 754.2888,
+          "delta_ltv": 754.2888,
+          "band_pixel_count": 4338,
+          "mask_pixel_count": 463
+        },
+        "lpips": null,
+        "mask_pixel_ratio": 0.007065,
+        "scientific_limitations": [
+          "Controlled synthetic benchmark evaluates reconstruction of known digital overlays against known clean reference.",
+          "In real clinical ultrasound, underlying tissue occluded by clinician calipers is unobservable.",
+          "High synthetic PSNR/SSIM indicates geometric inpainting capability, but cannot prove absence of hallucination on real pathological scans."
+        ]
+      }
+    }
+  ]
+}

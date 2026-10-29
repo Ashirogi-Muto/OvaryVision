@@ -1,0 +1,2124 @@
+{
+  "audit_timestamp_utc": "2026-10-29T08:43:24.967719+00:00",
+  "target_directory": "/home/ubuntu/major/data/raw/mmotu/images",
+  "total_files_scanned": 1469,
+  "valid_images_found": 1469,
+  "corrupt_or_unreadable_files": 0,
+  "corrupt_file_paths": [],
+  "unique_sha256_count": 1469,
+  "exact_duplicate_clusters_count": 0,
+  "exact_duplicate_clusters": [],
+  "near_duplicate_clusters_count": 136,
+  "near_duplicate_clusters": [
+    {
+      "cluster_id": "NEAR_DUP_0001",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/100.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/229.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/100.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0002",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/1032.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/1104.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/1032.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0003",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/1033.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/1035.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/1033.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0004",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/1036.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/1039.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/1036.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0005",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/1044.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/536.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/1044.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0006",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/1051.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/1163.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/614.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/1051.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0007",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/1064.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/1065.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/1064.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0008",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/1078.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/1079.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/1078.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0009",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/1094.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/930.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/1094.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0010",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/1097.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/458.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/999.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/1097.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0011",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/11.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/9.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/11.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0012",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/1107.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/423.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/1107.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0013",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/1123.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/1376.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/547.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/1123.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0014",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/1128.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/1129.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/1128.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0015",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/1130.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/603.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/1130.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0016",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/114.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/1298.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/926.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/114.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0017",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/1146.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/1297.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/1146.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0018",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/115.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/116.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/115.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0019",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/1196.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/1197.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/1196.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0020",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/1198.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/1202.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/1198.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0021",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/120.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/122.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/120.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0022",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/1218.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/82.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/84.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/1218.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0023",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/1241.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/1304.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/1241.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0024",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/1244.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/623.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/1244.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0025",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/1245.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/1248.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/1245.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0026",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/1249.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/1250.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/1249.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0027",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/1252.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/1253.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/1252.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0028",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/1268.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/1269.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/1268.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0029",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/1270.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/1272.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/1270.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0030",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/1274.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/1275.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/1274.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0031",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/1280.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/1308.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/1280.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0032",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/1284.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/1310.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/1284.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0033",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/1290.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/1291.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/1292.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/1290.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0034",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/1311.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/1312.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/1408.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/1311.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0035",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/1333.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/161.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/1333.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0036",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/1352.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/14.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/1352.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0037",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/1357.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/1358.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/1357.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0038",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/1359.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/1360.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/1359.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0039",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/1384.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/957.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/1384.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0040",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/1393.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/1394.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/1393.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0041",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/1395.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/1396.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/1395.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0042",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/1402.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/594.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/1402.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0043",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/1430.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/1431.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/1430.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0044",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/1432.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/1433.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/1432.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0045",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/144.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/146.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/144.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0046",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/1441.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/1442.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/1441.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0047",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/1449.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/1450.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/1449.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0048",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/1455.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/159.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/1455.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0049",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/1469.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/396.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/1469.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0050",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/182.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/183.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/182.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0051",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/184.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/186.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/184.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0052",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/185.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/187.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/185.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0053",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/192.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/194.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/195.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/446.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/192.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0054",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/212.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/419.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/212.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0055",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/224.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/98.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/224.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0056",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/225.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/226.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/225.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0057",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/232.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/233.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/234.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/232.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0058",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/239.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/241.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/453.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/239.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0059",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/248.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/249.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/250.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/248.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0060",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/252.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/253.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/252.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0061",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/254.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/461.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/254.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0062",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/256.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/257.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/256.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0063",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/261.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/262.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/261.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0064",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/277.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/278.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/277.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0065",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/282.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/285.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/282.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0066",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/296.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/297.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/296.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0067",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/348.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/349.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/348.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0068",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/350.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/351.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/350.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0069",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/353.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/354.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/914.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/353.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0070",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/357.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/358.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/357.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0071",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/365.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/821.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/365.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0072",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/366.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/367.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/368.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/366.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0073",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/38.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/39.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/40.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/38.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0074",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/380.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/381.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/380.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0075",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/387.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/481.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/387.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0076",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/391.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/392.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/391.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0077",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/393.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/394.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/393.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0078",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/398.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/962.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/398.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0079",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/399.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/402.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/49.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/399.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0080",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/407.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/408.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/409.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/407.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0081",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/410.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/961.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/410.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0082",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/413.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/414.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/413.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0083",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/430.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/431.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/430.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0084",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/448.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/449.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/448.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0085",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/459.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/460.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/459.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0086",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/462.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/512.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/462.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0087",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/490.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/491.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/490.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0088",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/497.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/500.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/497.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0089",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/499.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/508.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/499.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0090",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/514.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/807.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/514.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0091",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/515.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/516.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/515.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0092",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/528.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/529.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/528.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0093",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/533.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/832.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/533.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0094",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/546.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/697.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/546.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0095",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/549.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/550.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/549.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0096",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/553.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/554.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/553.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0097",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/563.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/564.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/563.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0098",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/573.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/574.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/573.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0099",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/575.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/581.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/575.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0100",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/577.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/579.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/577.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0101",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/578.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/580.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/578.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0102",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/587.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/588.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/587.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0103",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/590.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/954.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/590.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0104",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/6.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/7.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/6.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0105",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/609.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/610.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/609.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0106",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/615.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/727.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/615.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0107",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/616.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/618.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/616.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0108",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/636.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/638.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/840.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/636.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0109",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/640.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/641.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/640.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0110",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/646.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/844.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/646.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0111",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/659.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/661.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/659.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0112",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/660.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/662.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/660.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0113",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/664.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/665.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/664.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0114",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/693.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/853.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/693.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0115",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/703.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/854.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/703.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0116",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/715.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/717.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/715.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0117",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/716.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/718.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/716.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0118",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/719.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/720.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/719.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0119",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/722.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/723.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/722.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0120",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/732.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/734.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/732.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0121",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/738.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/740.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/738.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0122",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/754.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/871.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/754.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0123",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/757.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/758.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/757.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0124",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/776.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/777.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/776.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0125",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/780.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/781.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/780.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0126",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/787.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/788.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/787.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0127",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/85.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/88.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/85.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0128",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/888.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/891.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/888.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0129",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/890.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/892.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/890.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0130",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/903.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/904.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/903.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0131",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/915.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/921.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/915.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0132",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/935.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/937.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/935.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0133",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/942.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/943.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/942.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0134",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/946.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/947.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/946.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0135",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/948.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/950.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/948.JPG"
+    },
+    {
+      "cluster_id": "NEAR_DUP_0136",
+      "cluster_type": "perceptual_near_duplicate",
+      "image_paths": [
+        "/home/ubuntu/major/data/raw/mmotu/images/969.JPG",
+        "/home/ubuntu/major/data/raw/mmotu/images/970.JPG"
+      ],
+      "representative_path": "/home/ubuntu/major/data/raw/mmotu/images/969.JPG"
+    }
+  ],
+  "dimensions_distribution": {
+    "959x537": 9,
+    "483x542": 1,
+    "958x531": 13,
+    "959x532": 14,
+    "480x530": 5,
+    "959x528": 6,
+    "958x524": 2,
+    "959x530": 13,
+    "961x528": 2,
+    "956x532": 2,
+    "954x530": 1,
+    "951x545": 1,
+    "958x534": 26,
+    "481x527": 3,
+    "480x526": 1,
+    "480x528": 4,
+    "851x650": 1,
+    "481x528": 1,
+    "566x586": 1,
+    "568x589": 2,
+    "567x589": 2,
+    "568x583": 2,
+    "959x533": 14,
+    "565x595": 1,
+    "567x580": 2,
+    "1132x590": 1,
+    "477x525": 1,
+    "478x523": 1,
+    "480x523": 1,
+    "481x523": 1,
+    "478x526": 2,
+    "957x521": 3,
+    "955x518": 1,
+    "956x534": 1,
+    "479x532": 8,
+    "957x531": 10,
+    "955x530": 2,
+    "479x521": 1,
+    "479x525": 3,
+    "480x527": 2,
+    "959x563": 2,
+    "953x539": 1,
+    "957x528": 3,
+    "951x527": 1,
+    "811x605": 1,
+    "958x527": 2,
+    "1134x583": 1,
+    "958x528": 4,
+    "959x510": 1,
+    "955x538": 1,
+    "955x537": 1,
+    "957x527": 3,
+    "955x534": 2,
+    "823x597": 1,
+    "958x530": 11,
+    "959x531": 11,
+    "479x527": 3,
+    "478x534": 6,
+    "479x526": 3,
+    "479x541": 1,
+    "567x587": 2,
+    "569x586": 1,
+    "566x582": 1,
+    "568x584": 1,
+    "959x534": 14,
+    "963x520": 1,
+    "958x533": 20,
+    "958x539": 7,
+    "957x545": 1,
+    "956x526": 1,
+    "956x533": 7,
+    "479x508": 2,
+    "481x530": 5,
+    "479x496": 1,
+    "480x516": 1,
+    "959x535": 19,
+    "956x531": 1,
+    "959x529": 6,
+    "959x527": 1,
+    "958x523": 1,
+    "476x518": 1,
+    "483x524": 1,
+    "482x529": 1,
+    "962x525": 1,
+    "957x535": 4,
+    "955x527": 1,
+    "956x528": 1,
+    "481x520": 1,
+    "1130x537": 1,
+    "1132x540": 1,
+    "1128x547": 1,
+    "480x599": 1,
+    "755x590": 1,
+    "478x529": 1,
+    "1134x605": 1,
+    "566x635": 1,
+    "957x525": 2,
+    "562x577": 1,
+    "706x549": 1,
+    "956x527": 1,
+    "957x522": 1,
+    "958x525": 2,
+    "1131x590": 1,
+    "956x525": 1,
+    "959x524": 1,
+    "956x521": 1,
+    "957x512": 1,
+    "957x524": 2,
+    "1133x584": 1,
+    "956x524": 2,
+    "955x524": 2,
+    "959x536": 14,
+    "958x535": 20,
+    "480x533": 10,
+    "479x536": 5,
+    "959x540": 4,
+    "959x658": 1,
+    "958x662": 3,
+    "797x605": 1,
+    "477x536": 1,
+    "818x606": 1,
+    "824x600": 1,
+    "482x534": 4,
+    "957x604": 1,
+    "826x608": 1,
+    "569x595": 2,
+    "570x590": 2,
+    "480x534": 7,
+    "567x588": 2,
+    "568x592": 3,
+    "971x537": 1,
+    "973x528": 1,
+    "487x537": 1,
+    "973x531": 1,
+    "480x537": 3,
+    "481x539": 1,
+    "958x538": 3,
+    "958x532": 17,
+    "957x532": 9,
+    "481x531": 3,
+    "958x529": 7,
+    "1135x640": 3,
+    "1135x638": 1,
+    "1135x667": 1,
+    "1135x592": 4,
+    "482x533": 1,
+    "481x535": 5,
+    "961x535": 1,
+    "568x591": 3,
+    "570x597": 2,
+    "569x591": 2,
+    "568x590": 4,
+    "570x589": 3,
+    "480x532": 10,
+    "567x593": 1,
+    "568x594": 2,
+    "720x559": 1,
+    "728x555": 1,
+    "719x556": 1,
+    "725x559": 1,
+    "954x538": 1,
+    "719x555": 1,
+    "726x556": 1,
+    "569x592": 6,
+    "1135x597": 1,
+    "1134x595": 1,
+    "1121x591": 2,
+    "1135x594": 2,
+    "570x592": 2,
+    "1134x593": 1,
+    "1135x590": 3,
+    "958x526": 1,
+    "481x540": 2,
+    "481x544": 3,
+    "353x390": 1,
+    "957x534": 4,
+    "958x536": 7,
+    "479x534": 9,
+    "481x532": 8,
+    "483x541": 1,
+    "479x535": 4,
+    "483x530": 1,
+    "483x533": 2,
+    "478x531": 5,
+    "952x532": 1,
+    "957x539": 3,
+    "957x536": 2,
+    "958x537": 4,
+    "483x539": 4,
+    "1134x589": 1,
+    "569x594": 1,
+    "1135x589": 2,
+    "480x538": 2,
+    "963x535": 1,
+    "481x533": 4,
+    "960x530": 1,
+    "961x531": 2,
+    "973x529": 1,
+    "1135x595": 1,
+    "567x594": 1,
+    "479x531": 7,
+    "952x534": 1,
+    "756x560": 1,
+    "569x544": 2,
+    "568x543": 1,
+    "570x542": 1,
+    "565x544": 1,
+    "569x541": 1,
+    "484x528": 1,
+    "739x551": 1,
+    "479x530": 1,
+    "477x533": 1,
+    "568x587": 3,
+    "482x530": 2,
+    "1116x592": 1,
+    "1117x590": 1,
+    "1118x595": 1,
+    "1112x591": 1,
+    "1115x592": 1,
+    "962x640": 1,
+    "963x642": 1,
+    "961x622": 1,
+    "759x557": 2,
+    "963x619": 1,
+    "848x573": 1,
+    "1116x588": 1,
+    "1113x589": 1,
+    "1118x594": 1,
+    "1116x591": 1,
+    "1116x590": 1,
+    "954x541": 1,
+    "1135x587": 2,
+    "958x540": 3,
+    "1116x593": 1,
+    "958x624": 1,
+    "962x616": 1,
+    "964x616": 1,
+    "479x554": 2,
+    "573x321": 1,
+    "963x529": 1,
+    "960x525": 1,
+    "484x532": 2,
+    "482x532": 4,
+    "960x528": 2,
+    "481x536": 3,
+    "483x536": 2,
+    "480x535": 10,
+    "477x555": 1,
+    "482x536": 2,
+    "482x543": 1,
+    "482x538": 1,
+    "784x561": 1,
+    "481x555": 2,
+    "482x555": 1,
+    "479x559": 2,
+    "319x330": 1,
+    "806x611": 1,
+    "571x602": 1,
+    "1103x562": 1,
+    "1105x561": 1,
+    "302x327": 1,
+    "478x532": 2,
+    "567x596": 1,
+    "571x594": 1,
+    "570x595": 1,
+    "569x593": 1,
+    "566x592": 2,
+    "571x587": 1,
+    "569x597": 1,
+    "959x539": 4,
+    "482x540": 2,
+    "964x533": 1,
+    "964x530": 1,
+    "487x531": 2,
+    "957x533": 4,
+    "478x537": 2,
+    "569x645": 1,
+    "565x632": 1,
+    "1135x632": 1,
+    "480x531": 5,
+    "482x542": 2,
+    "480x544": 2,
+    "957x538": 2,
+    "764x556": 1,
+    "959x545": 4,
+    "483x551": 1,
+    "768x559": 1,
+    "480x536": 4,
+    "959x628": 1,
+    "482x537": 1,
+    "484x537": 1,
+    "481x529": 2,
+    "571x590": 1,
+    "568x596": 1,
+    "568x595": 1,
+    "955x541": 1,
+    "835x607": 1,
+    "483x538": 1,
+    "959x538": 7,
+    "960x533": 1,
+    "571x320": 1,
+    "1129x594": 1,
+    "480x266": 1,
+    "486x272": 1,
+    "959x544": 4,
+    "1071x633": 1,
+    "551x618": 1,
+    "550x645": 1,
+    "1106x607": 1,
+    "1103x611": 1,
+    "913x732": 1,
+    "1071x652": 1,
+    "1102x566": 1,
+    "478x602": 1,
+    "1115x568": 1,
+    "1106x566": 1,
+    "476x536": 1,
+    "483x540": 2,
+    "958x543": 4,
+    "483x552": 2,
+    "484x531": 1,
+    "961x522": 1,
+    "961x525": 1,
+    "477x521": 1,
+    "1133x583": 1,
+    "565x582": 1,
+    "567x591": 1,
+    "478x557": 2,
+    "479x551": 2,
+    "482x556": 1,
+    "962x528": 1,
+    "953x523": 1,
+    "953x530": 1,
+    "955x531": 1,
+    "957x529": 2,
+    "478x533": 5,
+    "1113x565": 1,
+    "646x329": 1,
+    "1105x566": 1,
+    "482x271": 1,
+    "955x520": 1,
+    "1104x573": 1,
+    "1101x567": 1,
+    "1103x566": 1,
+    "1102x570": 2,
+    "1104x565": 1,
+    "961x529": 1,
+    "953x533": 2,
+    "484x533": 1,
+    "957x537": 1,
+    "477x535": 2,
+    "479x533": 8,
+    "955x661": 1,
+    "972x531": 1,
+    "973x530": 1,
+    "948x535": 1,
+    "483x532": 2,
+    "954x532": 1,
+    "957x530": 2,
+    "878x444": 1,
+    "876x445": 1,
+    "479x444": 1,
+    "480x444": 1,
+    "478x444": 1,
+    "877x446": 1,
+    "878x443": 1,
+    "478x530": 2,
+    "481x534": 4,
+    "855x557": 1,
+    "857x559": 1,
+    "855x556": 1,
+    "480x529": 2,
+    "482x531": 2,
+    "485x530": 1,
+    "945x532": 1,
+    "481x603": 1,
+    "1104x674": 1,
+    "481x607": 1,
+    "566x591": 1,
+    "568x593": 1,
+    "567x592": 2,
+    "477x534": 2,
+    "489x295": 1,
+    "961x532": 2,
+    "495x531": 1,
+    "703x400": 1,
+    "962x532": 1,
+    "497x537": 1,
+    "477x530": 1,
+    "477x531": 1,
+    "963x532": 2,
+    "794x607": 1,
+    "799x623": 1,
+    "479x529": 3,
+    "1088x607": 1,
+    "478x535": 2,
+    "1105x569": 1,
+    "1104x569": 1,
+    "1102x568": 1,
+    "551x552": 1,
+    "555x549": 1,
+    "1104x567": 1,
+    "1103x565": 1,
+    "1134x592": 2,
+    "801x619": 1,
+    "567x590": 1,
+    "569x587": 1,
+    "569x590": 2,
+    "828x609": 1,
+    "478x604": 1,
+    "476x600": 1,
+    "474x604": 1,
+    "473x601": 1,
+    "973x534": 1,
+    "964x534": 1,
+    "963x555": 1,
+    "958x556": 3,
+    "963x557": 1,
+    "958x562": 4,
+    "958x554": 1,
+    "1134x591": 1,
+    "803x671": 1,
+    "806x669": 1,
+    "479x538": 1,
+    "549x585": 1,
+    "554x589": 1,
+    "548x584": 1,
+    "550x587": 1,
+    "905x534": 1,
+    "905x532": 1,
+    "938x537": 1,
+    "914x533": 1,
+    "843x613": 1,
+    "572x322": 1,
+    "655x347": 1,
+    "846x616": 1,
+    "833x604": 1,
+    "962x660": 1,
+    "959x660": 3,
+    "483x334": 1,
+    "876x595": 1,
+    "961x534": 1,
+    "956x557": 1,
+    "831x602": 1,
+    "479x537": 2,
+    "482x270": 1,
+    "649x327": 1,
+    "474x529": 1,
+    "957x664": 1,
+    "406x275": 1,
+    "407x272": 1,
+    "487x272": 2,
+    "481x266": 1,
+    "490x269": 1,
+    "486x273": 1,
+    "941x536": 1,
+    "955x532": 1,
+    "876x446": 1,
+    "959x662": 3,
+    "958x661": 2,
+    "1103x569": 1,
+    "798x615": 1,
+    "962x558": 1,
+    "485x283": 1,
+    "805x672": 1,
+    "915x535": 1,
+    "566x707": 1,
+    "568x713": 2,
+    "566x695": 1,
+    "569x701": 1,
+    "566x701": 1,
+    "569x707": 1,
+    "569x714": 1,
+    "846x614": 1,
+    "958x549": 1,
+    "958x552": 1,
+    "480x552": 3,
+    "478x559": 1,
+    "873x617": 1,
+    "814x609": 1,
+    "481x554": 3,
+    "478x544": 2,
+    "483x549": 1,
+    "1096x794": 1,
+    "847x614": 1,
+    "481x566": 1,
+    "478x542": 1,
+    "482x545": 1,
+    "477x559": 1,
+    "480x549": 2,
+    "484x549": 1,
+    "479x545": 3,
+    "480x270": 1,
+    "849x615": 1,
+    "971x545": 1,
+    "974x545": 1,
+    "479x549": 2,
+    "970x563": 1,
+    "482x551": 1,
+    "481x559": 1,
+    "957x542": 2,
+    "959x565": 1,
+    "1071x794": 1,
+    "956x559": 1,
+    "956x565": 1,
+    "959x564": 1,
+    "957x554": 1,
+    "480x558": 1,
+    "956x569": 1,
+    "959x559": 1,
+    "1067x594": 1,
+    "972x549": 2,
+    "972x553": 1,
+    "972x557": 1,
+    "972x537": 1,
+    "972x542": 1,
+    "477x558": 2,
+    "971x550": 1,
+    "478x551": 1,
+    "1069x632": 1,
+    "478x548": 1,
+    "957x543": 1,
+    "480x554": 2,
+    "478x558": 2,
+    "811x573": 1,
+    "796x581": 1,
+    "801x582": 1,
+    "479x557": 2,
+    "548x624": 1,
+    "481x556": 1,
+    "478x540": 1,
+    "480x555": 1,
+    "477x552": 1,
+    "480x551": 1,
+    "563x625": 1,
+    "568x622": 1,
+    "566x603": 1,
+    "818x610": 1,
+    "567x614": 1,
+    "566x605": 1,
+    "568x623": 1,
+    "483x554": 1,
+    "482x550": 1,
+    "477x560": 1,
+    "478x589": 1,
+    "479x566": 1,
+    "565x619": 1,
+    "1099x793": 1,
+    "569x612": 1,
+    "565x628": 1,
+    "568x606": 1,
+    "567x603": 1,
+    "568x612": 1,
+    "479x546": 1,
+    "480x550": 4,
+    "480x556": 3,
+    "476x553": 1,
+    "478x545": 2,
+    "481x548": 1,
+    "957x571": 1,
+    "477x550": 2,
+    "480x541": 1,
+    "568x568": 1,
+    "957x608": 1,
+    "568x560": 1,
+    "568x607": 1,
+    "569x614": 1,
+    "478x543": 1,
+    "972x544": 1,
+    "974x530": 1,
+    "494x537": 1,
+    "567x608": 1,
+    "566x604": 1,
+    "566x594": 1,
+    "959x604": 1,
+    "569x607": 1,
+    "568x608": 1,
+    "959x542": 1,
+    "958x547": 1,
+    "959x567": 1,
+    "958x561": 1,
+    "959x557": 1,
+    "959x606": 1,
+    "788x559": 1,
+    "964x548": 1,
+    "974x534": 1,
+    "971x548": 1,
+    "971x539": 1,
+    "971x542": 1,
+    "497x546": 1,
+    "974x541": 2,
+    "974x551": 1,
+    "852x606": 1,
+    "974x533": 1,
+    "774x627": 1,
+    "741x633": 1,
+    "479x540": 1,
+    "480x540": 1,
+    "959x619": 1,
+    "957x614": 1,
+    "566x631": 2,
+    "568x624": 1,
+    "567x619": 1,
+    "567x620": 1,
+    "567x631": 1,
+    "566x651": 1,
+    "567x627": 1,
+    "495x641": 1,
+    "1100x638": 1,
+    "1116x595": 1,
+    "973x551": 1,
+    "1111x618": 1,
+    "971x553": 1,
+    "973x556": 1,
+    "970x557": 1,
+    "972x546": 1,
+    "971x559": 1,
+    "972x552": 1,
+    "863x605": 1,
+    "478x643": 1,
+    "971x556": 1,
+    "493x558": 1,
+    "475x558": 1,
+    "494x552": 1,
+    "480x569": 1,
+    "972x543": 2,
+    "479x563": 1,
+    "480x559": 1,
+    "477x554": 1,
+    "958x660": 1,
+    "480x600": 1,
+    "481x550": 1,
+    "479x547": 2,
+    "479x552": 1,
+    "479x562": 1,
+    "958x550": 1,
+    "1135x785": 1,
+    "958x664": 1,
+    "1135x784": 1,
+    "1134x784": 2,
+    "974x579": 1,
+    "971x572": 1,
+    "973x661": 1,
+    "974x662": 1,
+    "974x661": 2,
+    "476x552": 1,
+    "495x557": 1,
+    "478x587": 1,
+    "496x532": 1,
+    "495x552": 1,
+    "495x541": 1,
+    "974x546": 1,
+    "478x553": 1,
+    "478x539": 1,
+    "959x546": 4,
+    "481x545": 1,
+    "866x617": 1,
+    "849x617": 1,
+    "852x613": 1,
+    "930x543": 1,
+    "479x662": 1,
+    "958x557": 2,
+    "959x549": 1,
+    "478x549": 1,
+    "482x547": 1,
+    "480x545": 1,
+    "481x553": 1,
+    "958x542": 1,
+    "479x288": 1,
+    "959x554": 3,
+    "479x543": 1,
+    "481x551": 1,
+    "481x543": 1,
+    "479x544": 2,
+    "482x560": 1,
+    "481x563": 1,
+    "476x557": 1,
+    "973x540": 1,
+    "974x564": 1,
+    "974x535": 1,
+    "973x533": 1,
+    "973x547": 1,
+    "481x552": 1,
+    "476x566": 1,
+    "498x546": 1,
+    "477x557": 1,
+    "496x549": 1,
+    "499x551": 1,
+    "971x558": 1,
+    "469x538": 1,
+    "498x549": 1,
+    "498x541": 1,
+    "959x661": 2,
+    "476x520": 1,
+    "1079x631": 1,
+    "1065x614": 1,
+    "957x549": 2,
+    "1084x617": 1,
+    "1096x614": 1,
+    "1106x628": 1,
+    "479x664": 1,
+    "1111x635": 1,
+    "1108x632": 1,
+    "1118x624": 1,
+    "549x602": 1,
+    "571x598": 1,
+    "561x597": 1,
+    "566x611": 1,
+    "562x622": 1,
+    "569x602": 2,
+    "388x524": 1,
+    "961x663": 1,
+    "457x536": 1,
+    "484x542": 1,
+    "474x548": 1,
+    "472x489": 1,
+    "461x493": 1,
+    "493x447": 1,
+    "972x554": 2,
+    "973x537": 1,
+    "482x541": 1,
+    "962x661": 1,
+    "481x542": 1,
+    "483x545": 1,
+    "883x579": 1,
+    "959x582": 1,
+    "782x686": 1,
+    "738x685": 1,
+    "761x687": 1,
+    "860x622": 1,
+    "867x614": 1,
+    "570x602": 1,
+    "568x616": 1,
+    "953x543": 1,
+    "959x541": 3,
+    "954x542": 1,
+    "957x541": 1,
+    "958x559": 1,
+    "480x543": 1,
+    "484x558": 1,
+    "565x598": 1,
+    "1135x705": 1,
+    "490x273": 1,
+    "773x629": 1,
+    "775x610": 1,
+    "957x572": 1,
+    "972x534": 1,
+    "972x548": 1,
+    "1135x609": 1,
+    "959x552": 1,
+    "958x545": 3,
+    "971x531": 1,
+    "1101x586": 1,
+    "492x272": 1,
+    "493x280": 1,
+    "967x537": 1,
+    "959x611": 1,
+    "959x612": 1,
+    "958x611": 1,
+    "958x609": 1,
+    "566x630": 1,
+    "570x627": 1,
+    "1104x596": 1,
+    "1105x584": 1,
+    "974x571": 1,
+    "973x554": 1,
+    "477x267": 1,
+    "974x553": 1,
+    "971x534": 1,
+    "482x274": 1,
+    "958x546": 2,
+    "959x551": 1,
+    "958x548": 1,
+    "956x537": 1,
+    "1113x604": 1,
+    "972x541": 1,
+    "972x547": 1,
+    "974x556": 1,
+    "477x296": 1,
+    "480x563": 1,
+    "972x540": 1,
+    "974x537": 1,
+    "956x544": 1,
+    "1134x596": 1,
+    "1134x608": 1,
+    "954x545": 1,
+    "479x548": 1,
+    "959x574": 1,
+    "956x573": 1,
+    "959x586": 1,
+    "1135x610": 1,
+    "478x524": 1,
+    "1127x580": 1,
+    "565x587": 2,
+    "565x581": 1,
+    "477x529": 1,
+    "957x523": 1,
+    "479x528": 2,
+    "954x526": 1,
+    "959x523": 1,
+    "566x585": 1,
+    "569x585": 1,
+    "968x532": 1,
+    "963x523": 1,
+    "481x526": 2,
+    "953x528": 1,
+    "861x606": 1,
+    "953x525": 1,
+    "953x532": 1,
+    "957x526": 2,
+    "846x606": 1,
+    "476x522": 1,
+    "478x527": 3,
+    "482x523": 1,
+    "952x521": 1,
+    "568x586": 3,
+    "568x588": 2,
+    "568x585": 1,
+    "567x581": 1,
+    "569x584": 1,
+    "566x587": 1,
+    "565x578": 1,
+    "565x580": 1,
+    "569x582": 1,
+    "565x583": 1,
+    "566x589": 1,
+    "566x581": 2,
+    "567x586": 1,
+    "958x663": 1,
+    "566x583": 1,
+    "564x536": 1,
+    "568x542": 1,
+    "480x542": 1,
+    "477x545": 1,
+    "959x526": 1,
+    "478x518": 1,
+    "948x602": 1,
+    "477x519": 1,
+    "957x518": 1,
+    "963x519": 1,
+    "959x520": 1,
+    "954x522": 1,
+    "1131x583": 1,
+    "777x650": 1,
+    "801x605": 1,
+    "1133x585": 1,
+    "951x604": 1,
+    "478x536": 1,
+    "481x525": 1,
+    "1135x588": 1,
+    "1132x585": 1,
+    "567x585": 1,
+    "690x545": 1,
+    "683x544": 1,
+    "723x542": 1,
+    "477x517": 1,
+    "479x500": 1,
+    "480x508": 1,
+    "478x515": 1
+  },
+  "channels_distribution": {
+    "3_channel": 1469
+  },
+  "patient_ids_available": false,
+  "patient_ids_note": "Dataset files scanned do not contain embedded DICOM patient metadata or explicit patient IDs in filenames. Perceptual dHash near-duplicate clustering applied to form pseudo-patient groups.",
+  "manifest_reconciled": false,
+  "status": "AUDIT_SUCCESS"
+}

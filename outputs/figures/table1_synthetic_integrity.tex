@@ -1,0 +1,15 @@
+\begin{table*}[t]
+\centering
+\caption{Controlled Synthetic-Artifact Benchmark: Tri-Partition Image Integrity Comparison across Preprocessing Arms. Values are reported as mean (standard deviation) across synthesized test scans.}
+\label{tab:synthetic_integrity}
+\small
+\begin{tabular}{lcccccc}
+\toprule
+\textbf{Preprocessing Arm} & \textbf{In-Mask MAE} $\downarrow$ & \textbf{In-Mask PSNR} $\uparrow$ & \textbf{Ext. MAE} $\downarrow$ & \textbf{Ext. PSNR} $\uparrow$ & \textbf{Global SSIM} $\uparrow$ & $\Delta$\textbf{LTV} $\downarrow$ \\
+\midrule
+Arm A (Raw) & 147.31 (10.74) & 3.78 (0.47) & 0.00 (0.00) & $\infty$ & 0.9716 (0.0041) & 4867.3 (331.2) \\
+Arm B (Inpainted) & 18.61 (1.49) & 20.75 (0.69) & 0.32 (0.06) & 38.33 (0.95) & 0.9819 (0.0038) & 390.8 (5.6) \\
+Arm C (Masked) & 40.93 (3.29) & 14.63 (0.56) & 0.71 (0.14) & 32.27 (0.89) & 0.9711 (0.0050) & 749.4 (14.9) \\
+\bottomrule
+\end{tabular}
+\end{table*}

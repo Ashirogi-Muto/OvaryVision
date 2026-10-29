@@ -1,0 +1,2 @@
+image_id,dataset_id,relative_image_path,sha256_checksum,width,height,channels,file_size_bytes,diagnostic_label,fine_grained_class,patient_id,study_id,pseudo_patient_cluster,artifact_mask_path,tumor_mask_path,has_visible_artifacts
+SAMPLE_0001,MMOTU_2D,data/raw/mmotu/images/sample_0001.jpg,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,800,400,1,102400,0,,,,CLUSTER_0001,data/interim/artifact_masks/sample_0001_mask.png,data/raw/mmotu/tumor_masks/sample_0001_tumor.png,True
