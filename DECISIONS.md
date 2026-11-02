@@ -307,3 +307,125 @@ This document is an **append-only** log of all fundamental architectural, scient
 - **Rationale**: Absolute scientific honesty regarding executed code vs literature baseline.
 - **Consequences**: Updated `SPEC.md`, `README.md`, `docs/RESEARCH_PROTOCOL.md`, and `docs/FULL_COHORT_BENCHMARK_RESULTS.md`.
 
+---
+
+## Decision D24: MMOTU Dataset Completeness, CEUS Modality Recovery, and Annotation Provenance Audit
+- **Date**: 2026-10-30
+- **Status**: Accepted & Executed
+- **Decision**: Formally audit and record the completeness of all public original and derivative releases of MMOTU (Google Drive, Zenodo 21128657, Zenodo 20541610 tombstone, Figshare 25115633, and Figshare 25058690). Safely stage the recovered 170-case Contrast-Enhanced Ultrasound cohort (`OTU_CEUS`) in `data/raw/mmotu_ceus/` with dedicated manifest `data/manifests/mmotu_ceus_master_manifest.csv` and release comparison table `outputs/metrics/mmotu_release_comparison.csv`.
+- **Rationale**:
+  - Validates that the local 2D cohort (1,469 scans, 53 malignant) is complete and unpruned compared to Figshare derivatives which dropped 267 Normal Ovary scans (1,202 scans total).
+  - Proves conclusively that clinician annotation artifact masks ($M_{art}$) do not exist in any public release; all symbols were burned into scan pixels during clinical exams and were never isolated by the original authors.
+  - Explains the origin of the 2,938 files in `data/raw/mmotu/tumor_masks/`: 1,469 unique binary lesion masks and 1,469 redundant byte-for-byte duplicate `<id>_binary_binary.PNG` files inherited from upstream Google Drive batch naming.
+  - Documents the presence of 216 Color Doppler Flow Images (CDFI) within the 1,469 2D cohort as an unexplored clinical sub-modality confounder.
+  - Recovers the 170-case CEUS cohort (161 benign, 9 malignant across 47 patients; 46.5% caliper prevalence) to enable out-of-domain transfer benchmarks without altering the completed 2D benchmark.
+- **Consequences**: Staged `data/raw/mmotu_ceus/`, generated `data/manifests/mmotu_ceus_master_manifest.csv` and `outputs/metrics/mmotu_release_comparison.csv`, and authored comprehensive audit report `docs/MMOTU_DATASET_COMPLETENESS_AUDIT.md`.
+
+---
+
+## Decision D25: CEUS Data Integrity Verification, CDFI Confidence Stratification, and Segmentation Protocol
+- **Date**: 2026-10-30
+- **Status**: Accepted
+- **Decision**: Formally verify all 170 CEUS scans and masks, stratify the 216 CDFI images by confidence tiers, and establish a 3-arm tumor segmentation protocol across Arms A, B, and C.
+- **Rationale**:
+  - Proves 100% integrity across all 170 CEUS scans (0 corruptions, 0 dimension mismatches, 100% concordance between RGB and binary masks).
+  - Prohibits labeling heuristic color detections as ground-truth CDFI; creates `data/manifests/mmotu_2d_cdfi_classification.csv` with confidence tiers (207 High, 16 Probable, 57 Ambiguous, 1,189 B-mode).
+  - Enforces evaluating segmentation models strictly on the 469 held-out test scans (`val.txt`) to eliminate data contamination from author-released pretrained DS²Net/MMSegmentation weights, and separates the 267 empty normal ovary masks into a dedicated false-positive rate evaluation.
+  - Strictly prohibits describing CEUS as independent external validation due to unresolvable patient overlap risks between the 2D and CEUS cohorts at Beijing Shijitan Hospital and small positive sample size ($N_{pos} = 9$); restricts framing to exploratory acoustic transfer.
+- **Consequences**: Created `docs/CEUS_AND_SEGMENTATION_EXPERIMENT_PLAN.md`, `outputs/metrics/ceus_data_integrity_audit.csv`, and `data/manifests/mmotu_2d_cdfi_classification.csv`.
+
+---
+
+## Decision D26: Internal Cluster Split, CDFI Reconciliation, Smoke Test Execution & Primary Bootstrap Governance
+- **Date**: 2026-10-30
+- **Status**: Accepted & Executed
+- **Decision**: Formally establish the 850/150 internal train/val partition using whole dHash pseudo-patient clusters, reconcile and freeze the CDFI manifest, execute a 2-epoch GPU training smoke test, lock the paired cluster bootstrap as primary inferential procedure, and verify all 469 test checksums.
+- **Rationale**:
+  - **Internal Split**: Partitioning `train.txt` into 850 `internal_train` and 150 `internal_val` using whole dHash clusters guarantees zero cluster leakage while preserving the 469 official test scans (`val.txt`) strictly untouched. Manifest saved at `data/manifests/mmotu_2d_segmentation_split.csv`.
+  - **CDFI Reconciliation**: Resolves the draft summary count difference (44 vs 57) by proving it arose from mental confusion with the 1,202 tumour scans; freezes the master classification with 207 High CDFI, 16 Probable CDFI, 57 Ambiguous Low-Flow, and 1,189 High B-mode under SHA-256 `487f376afc8f3ac5dd32f2a82453cdaf8659d1de52060f342ba1cf1fee4f79ff`.
+  - **Empirical Smoke Test**: Executed 2-epoch Arm A training on Tesla T4 GPU (Google Colab) with real scans and masks at $512 \times 512$ resolution, measuring actual runtime (5.66s / 5.29s), peak VRAM (4.752 GB), and active loss convergence ($1.0869 \to 0.8865 \to 0.8010$).
+  - **Primary Bootstrap**: Mandates paired pseudo-patient-cluster bootstrap ($B=2,000$ iterations) with pooled cluster resampling across the 82 test clusters as the primary inferential procedure; keeps Wilcoxon secondary.
+  - **Mask Verification**: Assigns $Y_{tumour} \equiv 0$ to normal training cases while preserving original anatomical ovary masks ($M_{ovary}$) for separate test evaluation. Confirms 100% of 469 test images match SHA-256 hashes.
+- **Consequences**: Created `scripts/smoke_test_arm_a.py`, `scripts/generate_segmentation_splits.py`, `data/manifests/mmotu_2d_segmentation_split.csv`, updated `docs/SEGMENTATION_PRE-EXECUTION_AUDIT.md` and `docs/CEUS_AND_SEGMENTATION_EXPERIMENT_PLAN.md`.
+
+---
+
+## Decision D27: G4 Blackwell Compute Profiling, Paired Epoch Augmentation, and Multiplicity-Preserving Bootstrap
+- **Date**: 2026-10-30
+- **Status**: Accepted & Verified
+- **Decision**: Profile NVIDIA RTX PRO 6000 Blackwell Server Edition (G4 runtime) for segmentation benchmark execution; update paired cluster bootstrap to preserve multinomial cluster draw multiplicities with conditional rejection sampling for zero-overlap draws; enforce epoch-varying paired spatial augmentations across arms in `SegmentationDataset`; add AMP FP16 and safe checkpoint resumption to `scripts/run_three_arm_segmentation_benchmark.py`.
+- **Rationale**:
+  - G4 profiling demonstrates 37.07 ms training step latency (215.8 imgs/sec), a 9.76x speedup over T4 AMP, using 2.10 GB of VRAM (2.2% of 95 GB capacity), with stable GradScaler scaling (65,536.0) and zero NaNs/Infs.
+  - Multiplicity preservation in bootstrap prevents variance underestimation caused by set-union collapsing. Conditional rejection sampling preserves Davison & Hinkley (1997) conditional bootstrap guarantees without arbitrary constant imputation.
+  - Epoch-varying paired augmentation guarantees identical spatial transformations across Arms A, B, C within each epoch while allowing transformations to vary between epochs.
+  - Training script enforces internal validation checkpointing, strict test-set isolation, independent seed initialization, and automatic resumption from interrupted checkpoints.
+- **Consequences**: Updated `src/ovaryvision/statistics.py`, `scripts/run_three_arm_segmentation_benchmark.py`, `docs/SEGMENTATION_PRE-EXECUTION_AUDIT.md`, `tests/test_statistics.py`, and `tests/test_segmentation_benchmark.py`.
+
+---
+
+## Decision D28: BCa Cluster Bootstrap Implementation with Percentile Fallback
+- **Date**: 2026-10-30
+- **Status**: Accepted & Implemented
+- **Decision**: Restore and formally implement BCa (Bias-Corrected and Accelerated) 95% Confidence Intervals as the primary estimator in `paired_cluster_bootstrap_segmentation()`, using cluster-level leave-one-out jackknife for acceleration $a$ and median bias correction $z_0$. Implement a robust fallback to standard percentile intervals if adjusted quantiles degenerate, reporting both BCa and percentile bounds in `ClusterBootstrapResult`.
+- **Rationale**:
+  - Eliminates the specification-implementation gap: `SPEC.md` and `docs/RESEARCH_PROTOCOL.md` specified BCa, but legacy classification code in `595ba9f` only called `np.percentile()`.
+  - BCa provides second-order accuracy ($O(1/n)$ coverage error) vs first-order ($O(1/\sqrt{n})$) for percentile intervals.
+  - The $O(K)$ cluster jackknife computes acceleration $a$ across the 82 test clusters in milliseconds.
+  - Fallback guard ensures numerical robustness on conditional subsets (such as LPR on the 193-scan overlap cohort) if extreme cluster leverage distorts adjusted quantiles.
+- **Consequences**: Updated `src/ovaryvision/statistics.py`, `docs/SEGMENTATION_PRE-EXECUTION_AUDIT.md`, and added `test_paired_cluster_bootstrap_bca_method_selection` in `tests/test_statistics.py`.
+
+---
+
+## Decision D29: Three-Arm Seed 42 Segmentation Pilot Execution, Collation Fix & Empirical Validation
+- **Date**: 2026-10-30
+- **Status**: Executed & Verified
+- **Decision**: Successfully execute the Three-Arm Seed 42 Segmentation Pilot on Google Colab G4 Blackwell runtime (`arm_a_raw`, `arm_b_inpainted`, `arm_c_masked`, 40 epochs each, seed 42) using the audited U-Net ResNet-34 architecture, AMP FP16, batch size 8, and internal validation checkpointing, while maintaining strict test-set isolation (zero test scans loaded or evaluated).
+- **Rationale**:
+  - Validated data loader pipeline under PyTorch 2.11 / Python 3.13 by implementing `collate_seg_fn` to prevent metadata dictionary collation type errors (`TypeError: must be real number, not str`).
+  - Executed all 40 epochs for each of the three arms autonomously via detached daemon session on NVIDIA RTX PRO 6000 Blackwell Server Edition (94.97 GB VRAM).
+  - Empirical training performance:
+    - **Arm A (Raw)**: 40 epochs in 706.5s (11.78 min; mean 17.66s/epoch); best checkpoint selected at Epoch 29 (internal val loss 0.1352, internal val DSC 0.8665).
+    - **Arm B (Inpainted)**: 40 epochs in 3,428.8s (57.15 min; mean 85.72s/epoch, reflective of on-the-fly OpenCV Navier-Stokes inpainting during DataLoader batching); best checkpoint selected at Epoch 33 (internal val loss 0.1339, internal val DSC 0.8648).
+    - **Arm C (Masked)**: 40 epochs in 750.6s (12.51 min; mean 18.76s/epoch); best checkpoint selected at Epoch 32 (internal val loss 0.1319, internal val DSC 0.8623).
+  - Preserved all 6 checkpoints (`best_checkpoint.pth` and `latest_checkpoint.pth` per arm), `history.csv`, and `run_summary.json` in `outputs/benchmark_runs/segmentation_benchmark/`.
+  - Zero test set exposure verified (469 held-out test scans remained strictly unaccessed on remote disk and locally).
+  - Immediately terminated G4 Colab session following deliverables verification to conserve compute budget.
+- **Consequences**: Established empirical pilot baseline and confirmed stability before authorizing remaining seeds (1337, 2026). Updated `DECISIONS.md`, `AGENT.md`, `PROJECT_STATE.md`, and `CHANGELOG.md`.
+
+---
+
+## Decision D31: Completion and Statistical Aggregation of the Full Three-Seed, Three-Arm Segmentation Benchmark
+- **Date**: 2026-11-01
+- **Status**: Executed & Verified
+- **Decision**: Train and evaluate the remaining six segmentation runs (Seed 1337: Arms A, B, C; Seed 2026: Arms A, B, C) on the G4 Blackwell runtime, evaluate all nine checkpoints on the 469 official held-out test scans (382 tumour, 87 normal ovary), and aggregate the complete 3-seed benchmark using scan-level multi-seed averaged paired pseudo-patient cluster bootstrap ($B=2,000$ resamples, BCa 95% CIs).
+- **Rationale**:
+  - Completes the full $3 \times 3 \times 40 = 9$ run benchmark design under strictly frozen experimental protocol (U-Net ResNet-34, $512 \times 512$, batch size 8, AMP FP16, AdamW, ComboLoss, epoch-varying paired augmentation).
+  - Preserved test isolation during all training phases (469 test scans never loaded or referenced during training).
+  - All nine runs completed successfully with zero NaNs/Infs:
+    - Arm A (Raw): Seed 42 (11.78m, best ep 29), Seed 1337 (11.68m, best ep 23), Seed 2026 (11.63m, best ep 16).
+    - Arm B (Inpainted): Seed 42 (57.15m, best ep 33), Seed 1337 (54.51m, best ep 29), Seed 2026 (54.37m, best ep 17).
+    - Arm C (Masked): Seed 42 (12.51m, best ep 32), Seed 1337 (12.34m, best ep 40), Seed 2026 (12.36m, best ep 39).
+  - Pooled Multi-Seed Empirical Findings (Scan-level 3-Seed Mean on Held-Out Test Set):
+    - **Tumour Delineation ($N=382$)**:
+      - Arm A (Raw): DSC $0.8073 \pm 0.2490$ (median 0.9098), IoU $0.7368 \pm 0.2579$, Boundary IoU $0.0717 \pm 0.0519$.
+      - Arm B (Inpainted): DSC $0.8172 \pm 0.2401$ (median 0.9117), IoU $0.7474 \pm 0.2493$, Boundary IoU $0.0724 \pm 0.0511$.
+      - Arm C (Masked): DSC $0.8191 \pm 0.2168$ (median 0.9002), IoU $0.7459 \pm 0.2310$, Boundary IoU $0.0737 \pm 0.0511$.
+      - Delta DSC (C vs B): $+0.0019$ (+0.19%), BCa 95% CI $[-0.0070, +0.0131]$, $p = 0.776$ (no significant difference).
+      - Delta DSC (C vs A): $+0.0118$ (+1.18%), BCa 95% CI $[+0.0009, +0.0240]$, $p = 0.042$.
+      - Delta DSC (B vs A): $+0.0099$ (+0.99%), BCa 95% CI $[-0.0009, +0.0215]$, $p = 0.071$.
+    - **In-Caliper Lesion Preservation Ratio ($N=193$ valid overlap cohort, $N=189$ zero-overlap excluded without imputation)**:
+      - Arm A (Raw): $0.4105 \pm 0.3253$ (median 0.3727).
+      - Arm B (Inpainted): $0.4584 \pm 0.3487$ (median 0.4526).
+      - Arm C (Masked): $0.3873 \pm 0.3389$ (median 0.3056).
+      - Delta LPR (C vs B): $-0.0710$ (-7.10 percentage points lower lesion sensitivity under masking), BCa 95% CI $[-0.0969, -0.0460]$, $p = 0.0005$. Masking induces severe localized lesion dropout.
+      - Delta LPR (B vs A): $+0.0478$ (+4.78 percentage points higher sensitivity under inpainting vs raw), BCa 95% CI $[+0.0216, +0.0763]$, $p = 0.002$.
+    - **Normal Ovary Specificity ($N=87$)**:
+      - Clean Rejection Rate: Arm A $57.47\%$ (50/87), Arm B $54.02\%$ (47/87), Arm C $45.98\%$ (40/87).
+      - Delta Clean Rejection (C vs B): $-0.0805$ (-8.05%), BCa 95% CI $[-0.1515, -0.0152]$, $p = 0.022$.
+      - Intra-Ovarian False Positive Rate: Arm A $14.14\%$, Arm B $13.23\%$, Arm C $22.38\%$.
+      - Delta Intra-Ovarian FPR (C vs B): $+0.0914$ (+9.14%), BCa 95% CI $[+0.0532, +0.1382]$, $p = 0.0005$. Zero-masking creates artificial dark voids that trigger false positive cystic lesion detections on benign ovaries.
+    - **Statistical Rigour**: BCa fallback frequency was 0% across all comparisons; rejected empty draws count was 0.
+- **Consequences**: Complete 9-run deliverables finalized in `outputs/benchmark_runs/segmentation_benchmark/final_three_seed_benchmark/`. Full test suite passing (86/86). All classification benchmark outputs remain 100% frozen.
+
+
+

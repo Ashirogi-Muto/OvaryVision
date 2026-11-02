@@ -151,18 +151,24 @@ This document outlines the end-to-end execution roadmap for the OvaryVision rese
 
 ## Milestone 4: Model Training & Evaluation Across All Three Arms
 **Goal**: Execute training across Arms A, B, and C over 3 seeds on GPU runtime; synchronize predictions and metrics back to OCI workspace.  
-**Target Platform**: External GPU  
-**Status**: Orchestration & Ingestion Ready (Awaiting GPU Training Execution)  
+**Target Platform**: External GPU (Colab G4 Blackwell)  
+**Status**: **Complete (Classification & Segmentation Benchmarks Executed and Evaluated)**  
 
-### Task 4.1: Internal Benchmark Training & Validation (MMOTU)
+### Task 4.1: Internal Classification Benchmark Training & Validation (MMOTU)
 - **Goal**: Train 18 total model runs (3 Arms $\times$ 2 Backbones $\times$ 3 Seeds); evaluate internal test sets.
 - **Dependencies**: Milestone 3.
-- **Expected Files**: `outputs/metrics/mmotu_internal_results.csv`, `outputs/checkpoints/`
-- **Status**: **Tooling Ready (`scripts/gpu_train.py`); Awaiting GPU Execution Run**.
+- **Expected Files**: `outputs/benchmark_runs/colab/`, `outputs/metrics/arm_a_real_benchmark_summary.csv`
+- **Status**: **Complete** (Executed on G4 Blackwell GPU; documented in D21).
 
-### Task 4.2: External Benchmark Evaluation (OvaTUS-V1)
-- **Goal**: Ingest OvaTUS-V1 post-approval, verify label compatibility mapping, and evaluate all 18 trained models without fine-tuning.
-- **Dependencies**: Task 4.1, OvaTUS-V1 access approval (**BLK-03**).
+### Task 4.2: Three-Seed, Three-Arm Segmentation Benchmark (MMOTU)
+- **Goal**: Train 9 total model runs (3 Arms $\times$ 3 Seeds: 42, 1337, 2026; 40 epochs each) using SMP U-Net ResNet-34 at 512x512 with AMP FP16. Evaluate all 9 checkpoints on official held-out test cohort (469 scans).
+- **Dependencies**: Milestone 3.
+- **Expected Files**: `outputs/benchmark_runs/segmentation_benchmark/`, `outputs/benchmark_runs/segmentation_benchmark/final_three_seed_benchmark/`
+- **Status**: **Complete** (Executed on G4 Blackwell GPU; documented in D29 & D31).
+
+### Task 4.3: External Benchmark Evaluation (OvaTUS-V1)
+- **Goal**: Ingest OvaTUS-V1 post-approval, verify label compatibility mapping, and evaluate models without fine-tuning.
+- **Dependencies**: Task 4.1, Task 4.2, OvaTUS-V1 access approval (**BLK-03**).
 - **Expected Files**: `outputs/metrics/ovatus_external_results.csv`
 - **Status**: **Blocked (BLK-03)**.
 

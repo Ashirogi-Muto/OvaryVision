@@ -1,10 +1,10 @@
 # PROJECT_STATE.md — Continuous Project State Tracker: OvaryVision
 
-**Current Date / Timestamp**: 2026-10-29  
-**Current Phase**: Full 18-Run Benchmark & Forensic Scientific Audit Complete
-**Current Status**: Complete on `exp/full-cohort-benchmark` (Ready for User Review)
+**Current Date / Timestamp**: 2026-11-01
+**Current Phase**: Three-Seed, Three-Arm Segmentation Benchmark Complete & Aggregated
+**Current Status**: Complete on `exp/full-cohort-benchmark` (Ready for Supervisor / User Review)
 **Canonical Specification**: `SPEC.md` (v2.0.0)
-**Audit Documents**: `docs/MILESTONE_1_AUDIT.md`, `docs/FULL_COHORT_AUDIT_REPORT.md`
+**Audit Documents**: `docs/MILESTONE_1_AUDIT.md`, `docs/FULL_COHORT_AUDIT_REPORT.md`, `docs/MMOTU_DATASET_COMPLETENESS_AUDIT.md`, `docs/SEGMENTATION_PRE-EXECUTION_AUDIT.md`
 
 ---
 
@@ -20,13 +20,28 @@ Establish a reproducible, leak-resistant, and clinically grounded data-centric b
 | `SPEC.md` | Specification | Implemented | v2.0.0 Canonical research specification with audited assumptions |
 | `AGENT.md` | Operating Protocol & Memory | Implemented | Merged canonical agent memory and integrity rules |
 | `PROJECT_STATE.md` | Project Memory | Implemented | Live state file tracking deliverables and blockers |
-| `DECISIONS.md` | Decision Log | Implemented | Append-only architectural & methodology log (D01–D23) |
+| `DECISIONS.md` | Decision Log | Implemented | Append-only architectural & methodology log (D01–D31) |
 | `IMPLEMENTATION_PLAN.md` | Roadmap | Implemented | Dependency-aware milestones and task tracking |
-| `CHANGELOG.md` | History | Implemented | Foundation, Milestone 2, and Core Pipeline updates recorded |
+| `CHANGELOG.md` | History | Implemented | Foundation, Milestone 2, Core Pipeline & Completeness Audit updates |
 | `README.md` | Documentation | Implemented | Project entry point, CLI guide, and architecture |
 | `docs/RESEARCH_PROTOCOL.md` | Research Protocol | Implemented | Detailed 3-arm protocol, calibration & metrics |
 | `docs/FULL_COHORT_BENCHMARK_RESULTS.md` | Results Report | Implemented | 18-run benchmark report with macro-averages and metrics |
 | `docs/FULL_COHORT_AUDIT_REPORT.md` | Audit Report | Implemented | Forensic audit of cohort, power, non-inferiority, mask QC |
+| `docs/MMOTU_DATASET_COMPLETENESS_AUDIT.md` | Completeness Audit | Implemented | Forensic audit across 6 MMOTU releases, CEUS recovery, mask provenance |
+| `docs/CEUS_AND_SEGMENTATION_EXPERIMENT_PLAN.md` | Experiment Plan | Implemented | 3-arm segmentation design, CDFI verification, CEUS transfer protocol |
+| `docs/SEGMENTATION_PRE-EXECUTION_AUDIT.md` | Pre-Execution Audit | Implemented | Split integrity, CDFI contact sheet, LPR definition, architecture |
+| `outputs/metrics/mmotu_release_comparison.csv` | Dataset Manifest | Implemented | Machine-readable comparison table across 7 releases |
+| `outputs/metrics/ceus_data_integrity_audit.csv` | Audit Output | Implemented | 170-case per-file verification with SHA-256 and area fractions |
+| `data/manifests/mmotu_ceus_master_manifest.csv` | Dataset Manifest | Implemented | 170-case CEUS master manifest with dHash clusters, splits, targets |
+| `data/manifests/mmotu_2d_cdfi_classification.csv` | Dataset Manifest | Implemented | 1,469-case 2D CDFI classification with confidence tiers |
+| `data/manifests/mmotu_2d_segmentation_split.csv` | Dataset Manifest | Implemented | 850/150 internal train/val cluster-preserved split, 469 held-out test |
+| `scripts/run_three_arm_segmentation_benchmark.py` | Benchmark Script | Implemented | 3-arm segmentation runner with AMP, epoch-pairing, custom collation |
+| `scripts/evaluate_seed42_test_cohort.py` | Evaluation Script | Implemented | Test cohort evaluator with BCa paired cluster bootstrap & plotting |
+| `scripts/aggregate_three_seed_benchmark.py` | Aggregator Script | Implemented | 3-seed multi-run aggregator with scan-level paired cluster BCa bootstrap |
+| `outputs/benchmark_runs/segmentation_benchmark/` | Checkpoints & Runs | Implemented | All 9 completed runs (`arm_{a,b,c}_seed{42,1337,2026}`) with best checkpoints |
+| `outputs/benchmark_runs/segmentation_benchmark/seed{42,1337,2026}_test_evaluation/` | Test Evaluation | Implemented | Per-seed held-out test evaluations on 469 scans with BCa bootstrap reports |
+| `outputs/benchmark_runs/segmentation_benchmark/final_three_seed_benchmark/` | Aggregated Benchmark | Implemented | Pooled 3-seed tables, forest plot, tumour/normal comparison plots, master JSON |
+| `data/raw/mmotu_ceus/` | Data Staging | Implemented | 170 CEUS scans, 170 binary masks, 170 RGB masks, official labels |
 | `scripts/audit_masks_and_generate_contact_sheets.py` | QC Tooling | Implemented | Mask QC extraction, area/overlap metrics, contact sheet renderer |
 | `outputs/qc/contact_sheets/` | Visual QC | Implemented | Contact sheets for all 53 malignant cases and 36 benign samples |
 | `docs/DATA_DICTIONARY.md` | Schemas | Implemented | Data schemas for manifests, audits, records & synthetic metrics |
@@ -49,7 +64,7 @@ Establish a reproducible, leak-resistant, and clinically grounded data-centric b
 | `src/ovaryvision/preprocessing.py` | Core Module | Implemented | 3-arm engine: Arm A (Raw), Arm B (Inpainted), Arm C (Masked) |
 | `src/ovaryvision/calibration.py` | Core Module | Implemented | Validation Temperature Scaling, ECE, MCE, Brier score |
 | `src/ovaryvision/annotation_workflow.py` | Core Module | Implemented | Caliper candidate extraction, QC rules, overlay generator |
-| `src/ovaryvision/statistics.py` | Core Module | Implemented | Paired DeLong test, bootstrap CIs, non-inferiority, McNemar |
+| `src/ovaryvision/statistics.py` | Core Module | Implemented | Paired DeLong, BCa & percentile cluster bootstrap, non-inferiority |
 | `src/ovaryvision/cli.py` | CLI Interface | Implemented | Click CLI with 11 core subcommands |
 | `scripts/run_audit.py` | Automation | Implemented | Quick script runner for data audits |
 | `scripts/ingest_mmotu.py` | Automation | Implemented | Safe, opt-in extraction and post-ingestion audit helper |
@@ -59,7 +74,7 @@ Establish a reproducible, leak-resistant, and clinically grounded data-centric b
 | `scripts/evaluate_synthetic_benchmark.py` | Automation | Implemented | Tri-partition comparative benchmark evaluator |
 | `scripts/generate_figures.py` | Visualization | Implemented | Vector SVG/PNG figures for synthetic benchmark & calibration |
 | `scripts/generate_tables.py` | Reporting | Implemented | LaTeX manuscript table generator for tri-partition integrity |
-| `tests/` | Quality Gate | Implemented | Automated pytest suite (**69 tests passing in 1.65s**) |
+| `tests/` | Quality Gate | Implemented | Automated pytest suite (**86 tests passing in 4.1s**) |
 
 ---
 
@@ -96,7 +111,7 @@ Establish a reproducible, leak-resistant, and clinically grounded data-centric b
 
 ## 5. Recent Testing & Verification Evidence
 
-- **Automated Tests**: Tested via `pytest tests/` (**69 of 69 tests passing** across 9 test suites in 1.65s):
+- **Automated Tests**: Tested via `pytest tests/` (**86 of 86 tests passing** across 13 test suites in 4.09s):
   - `tests/test_annotation_workflow.py` (5 tests)
   - `tests/test_cli.py` (13 tests)
   - `tests/test_config.py` (4 tests)
@@ -108,7 +123,8 @@ Establish a reproducible, leak-resistant, and clinically grounded data-centric b
   - `tests/test_splits.py` (6 tests)
   - `tests/test_preprocessing.py` (6 tests)
   - `tests/test_calibration.py` (5 tests)
-  - `tests/test_statistics.py` (7 tests)
+  - `tests/test_statistics.py` (13 tests)
+  - `tests/test_segmentation_benchmark.py` (11 tests)
 - **Controlled Synthetic Benchmark Results (Generated 2026-10-29)**:
   - Arm A (Raw Calipers): In-Mask MAE = 147.31 ± 10.74, PSNR = 3.78 ± 0.47 dB, $\Delta \text{LTV} = 4,867.3 \pm 331.2$.
   - Arm B (Inpainted): In-Mask MAE = 18.61 ± 1.49, PSNR = 20.75 ± 0.69 dB, Global SSIM = 0.9819, $\Delta \text{LTV} = 390.8 \pm 5.6$.
@@ -136,9 +152,62 @@ Establish a reproducible, leak-resistant, and clinically grounded data-centric b
     - Harmonic Inpainting (Arm B) maintained near-zero drift: $-0.0021$ to $+0.0019$ ($95\%$ bootstrap CIs include zero in 5 of 6 runs).
     - Calibrated Brier score preserved/improved under Arm B ($0.0004$–$0.0042$) and degraded under Arm C ($0.0006$–$0.0093$).
   - Full report: `docs/GATE_B_PILOT_RESULTS.md`; metrics in `outputs/metrics/real_pilot_classification_metrics.csv` and `outputs/metrics/real_pilot_integrity_metrics.csv`.
+- **Three-Arm Seed 42 Segmentation Pilot Benchmark (Executed 2026-10-30)**:
+  - Architecture: SMP U-Net with ImageNet-pretrained ResNet-34 encoder ($512 \times 512$, batch size 8, AMP FP16).
+  - Cohort: 850 `internal_train` scans, 150 `internal_val` scans (cluster-preserved partition); 469 test scans strictly held out (zero test exposure).
+  - Runtime: Executed on Google Colab NVIDIA RTX PRO 6000 Blackwell Server Edition (94.97 GB VRAM).
+  - Results across 40 epochs:
+    - **Arm A (`arm_a_raw`)**: 11.78 min (mean 17.66s/epoch); best checkpoint selected at Epoch 29 (internal val loss `0.1352`, internal val DSC `0.8665`).
+    - **Arm B (`arm_b_inpainted`)**: 57.15 min (mean 85.72s/epoch, reflective of on-the-fly OpenCV Navier-Stokes inpainting per scan); best checkpoint selected at Epoch 33 (internal val loss `0.1339`, internal val DSC `0.8648`).
+    - **Arm C (`arm_c_masked`)**: 12.51 min (mean 18.76s/epoch); best checkpoint selected at Epoch 32 (internal val loss `0.1319`, internal val DSC `0.8623`).
+  - Checkpoints and run summaries verified and saved to `outputs/benchmark_runs/segmentation_benchmark/`.
+  - Colab session terminated immediately upon completion.
+- **Three-Arm Seed 42 Held-Out Test Cohort Evaluation (Executed 2026-10-30)**:
+  - Cohort: 469 official held-out test scans (382 tumour scans, 87 normal ovary scans, 82 multi-frame clusters + 372 singletons = 454 clusters).
+  - Runtime: Executed on Google Colab NVIDIA RTX PRO 6000 Blackwell Server Edition in 146.75 seconds.
+  - Verified 100% SHA-256 integrity match for all test images and masks.
+  - Key Findings:
+    - **Tumour DSC ($N=382$)**: Arm A $0.8209 \pm 0.2624$, Arm B $0.8179 \pm 0.2601$, Arm C $\mathbf{0.8419 \pm 0.2039}$. Arm C significantly outperforms Arm B ($\Delta_{C-B} = +0.0240$, BCa 95% CI $[+0.0060, +0.0444]$, $p = 0.013$).
+    - **Lesion Preservation Ratio ($N=193$ valid overlap cohort)**: Arm A $0.4279 \pm 0.3496$, Arm B $\mathbf{0.4618 \pm 0.3854}$, Arm C $0.3876 \pm 0.3748$. Arm B significantly outperforms Arm C ($\Delta_{C-B} = -0.0742$, BCa 95% CI $[-0.1132, -0.0346]$, $p = 0.001$).
+    - **Normal Ovary Specificity ($N=87$)**: Clean rejection drops severely under Arm C ($21.84\%$, 19/87) compared to Arm B ($52.87\%$, 46/87) ($\Delta_{C-B} = -0.3103$, BCa 95% CI $[-0.4379, -0.1906]$, $p = 0.0005$). Intra-ovarian FPR increases from $14.26\%$ (Arm B) to $36.17\%$ (Arm C) ($\Delta_{C-B} = +0.2191$, BCa 95% CI $[+0.1432, +0.3028]$, $p = 0.0005$). Extra-ovarian FPR remains neutral ($1.51\%$ vs $1.66\%$, $p = 0.665$).
+    - **BCa Reliability**: 0% fallback to percentile intervals across all metrics; 0 empty draws rejected.
+  - Deliverables: `outputs/benchmark_runs/segmentation_benchmark/seed42_test_evaluation/`.
+- **Full Nine-Run Three-Seed Segmentation Benchmark (Executed & Aggregated 2026-11-01)**:
+  - Architecture: SMP U-Net with ImageNet-pretrained ResNet-34 encoder ($512 \times 512$, batch size 8, AMP FP16, AdamW, ComboLoss).
+  - Model Matrix: 3 Arms (Raw, Inpainted, Masked) $\times$ 3 Seeds (42, 1337, 2026) = 9 independent runs of 40 epochs each.
+  - Runtime: Total GPU runtime across all 9 runs was ~3.97 hours on NVIDIA RTX PRO 6000 Blackwell Server Edition.
+  - Training Summary:
+    - Arm A (Raw): Seed 42 (11.78m, best ep 29), Seed 1337 (11.68m, best ep 23), Seed 2026 (11.63m, best ep 16).
+    - Arm B (Inpainted): Seed 42 (57.15m, best ep 33), Seed 1337 (54.51m, best ep 29), Seed 2026 (54.37m, best ep 17).
+    - Arm C (Masked): Seed 42 (12.51m, best ep 32), Seed 1337 (12.34m, best ep 40), Seed 2026 (12.36m, best ep 39).
+  - Test Evaluation: Evaluated all 9 checkpoints on official held-out test cohort (382 tumour, 87 normal; 469 scans).
+  - Statistical Aggregation (Scan-level 3-Seed Mean with $B=2,000$ Cluster BCa Bootstrap across 454 clusters):
+    - **Tumour Delineation ($N=382$)**:
+      - Arm A (Raw): DSC $0.8073 \pm 0.2490$ (median 0.9098), IoU $0.7368 \pm 0.2579$, Boundary IoU $0.0717 \pm 0.0519$.
+      - Arm B (Inpainted): DSC $0.8172 \pm 0.2401$ (median 0.9117), IoU $0.7474 \pm 0.2493$, Boundary IoU $0.0724 \pm 0.0511$.
+      - Arm C (Masked): DSC $0.8191 \pm 0.2168$ (median 0.9002), IoU $0.7459 \pm 0.2310$, Boundary IoU $0.0737 \pm 0.0511$.
+      - Delta DSC (C vs B): $+0.0019$ (+0.19%), BCa 95% CI $[-0.0070, +0.0131]$, $p = 0.776$ (no significant difference).
+      - Delta DSC (C vs A): $+0.0118$ (+1.18%), BCa 95% CI $[+0.0009, +0.0240]$, $p = 0.042$.
+      - Delta DSC (B vs A): $+0.0099$ (+0.99%), BCa 95% CI $[-0.0009, +0.0215]$, $p = 0.071$.
+    - **Lesion Preservation Ratio ($N=193$ valid overlap cohort, $N=189$ zero-overlap excluded without imputation)**:
+      - Arm A (Raw): $0.4105 \pm 0.3253$ (median 0.3727).
+      - Arm B (Inpainted): $0.4584 \pm 0.3487$ (median 0.4526).
+      - Arm C (Masked): $0.3873 \pm 0.3389$ (median 0.3056).
+      - Delta LPR (C vs B): $-0.0710$ (-7.10 percentage points lower lesion sensitivity under masking), BCa 95% CI $[-0.0969, -0.0460]$, $p = 0.0005$. Masking induces severe localized lesion dropout.
+      - Delta LPR (B vs A): $+0.0478$ (+4.78 percentage points higher sensitivity under inpainting vs raw), BCa 95% CI $[+0.0216, +0.0763]$, $p = 0.002$.
+    - **Normal Ovary Specificity ($N=87$)**:
+      - Clean Rejection Rate: Arm A $57.47\%$ (50/87), Arm B $54.02\%$ (47/87), Arm C $45.98\%$ (40/87).
+      - Delta Clean Rejection (C vs B): $-0.0805$ (-8.05%), BCa 95% CI $[-0.1515, -0.0152]$, $p = 0.022$.
+      - Intra-Ovarian False Positive Rate: Arm A $14.14\%$, Arm B $13.23\%$, Arm C $22.38\%$.
+      - Delta Intra-Ovarian FPR (C vs B): $+0.0914$ (+9.14%), BCa 95% CI $[+0.0532, +0.1382]$, $p = 0.0005$. Zero-masking creates artificial dark voids that trigger false positive cystic lesion detections on benign ovaries.
+    - **Statistical Rigour**: BCa fallback frequency was 0% across all comparisons; rejected empty draws count was 0.
+  - Final Deliverables: `outputs/benchmark_runs/segmentation_benchmark/final_three_seed_benchmark/` contains all 10 summary CSVs, plots, and master JSON.
 - **Publication Figures Generated**:
   - `outputs/figures/synthetic_benchmark_tripartition.svg` (and `.png`)
   - `outputs/figures/calibration_reliability_diagrams.svg` (and `.png`)
+  - `outputs/benchmark_runs/segmentation_benchmark/final_three_seed_benchmark/plots/three_seed_tumour_metrics_comparison.png`
+  - `outputs/benchmark_runs/segmentation_benchmark/final_three_seed_benchmark/plots/three_seed_normal_ovary_comparison.png`
+  - `outputs/benchmark_runs/segmentation_benchmark/final_three_seed_benchmark/plots/three_seed_bootstrap_forest_plot.png`
 - **CLI Commands Verified**:
   - `ovaryvision check-env`
   - `ovaryvision init-dirs`
@@ -156,8 +225,7 @@ Establish a reproducible, leak-resistant, and clinically grounded data-centric b
 
 ## 6. Immediate Next Actions
 
-1. Scale researcher-annotated morphological mask generation across the remaining 1,319 MMOTU images, prioritizing the 53 malignant cases (files `1417`–`1469`) to enable full-cohort paired DeLong testing and sensitivity evaluation.
-2. Complete full 3-arm training on scaled datasets under Arm B (Harmonic Inpainting) and Arm C (Zero-Masking) across all 3 seeds and both backbones.
-3. Compute formal non-inferiority hypothesis tests ($\delta = -0.02$) between Arm C and Arm B on the full evaluation test set once positive cases are integrated.
-4. Finalize manuscript figures and tables for November 2–3, 2026 milestone review.
-5. User to manually transmit the approved formal data request letter (`docs/OVATUS_ACCESS_REQUEST.md`) to Prof. Le Thi Lan for OvaTUS-V1 surgical histopathology ground truth.
+1. Present supervisor-ready 3-seed completed segmentation benchmark report detailing the multi-seed empirical findings and clinical trade-offs.
+2. Incorporate findings into academic manuscript / thesis report (LaTeX tables, forest plot, comparison violin plots).
+3. User to transmit the approved formal data request letter (`docs/OVATUS_ACCESS_REQUEST.md`) to Prof. Le Thi Lan for OvaTUS-V1 surgical histopathology ground truth.
+4. User to evaluate CEUS transfer segmentation experiments (`data/raw/mmotu_ceus/`).

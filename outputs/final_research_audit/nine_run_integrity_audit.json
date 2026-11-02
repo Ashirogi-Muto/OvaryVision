@@ -1,0 +1,467 @@
+{
+  "audit_name": "nine_run_integrity_audit",
+  "timestamp_utc": "2026-11-01T14:19:12.278482+00:00",
+  "total_expected_runs": 9,
+  "all_runs_passed": true,
+  "runs": {
+    "arm_a_raw_seed42": {
+      "run_dir": "outputs/benchmark_runs/segmentation_benchmark/arm_a_raw_seed42",
+      "exists": true,
+      "files": {
+        "best_checkpoint.pth": {
+          "size_bytes": 97921843,
+          "mtime_iso": "2026-10-30T08:14:12+00:00",
+          "sha256": "5586ed2baec78b5461c49d7dd8ff3ad3406df2993e639e2ddf9e28bf8dae72fa",
+          "zip_test": "PASS",
+          "namelist": [
+            "best_checkpoint/data.pkl",
+            "best_checkpoint/.format_version",
+            "best_checkpoint/.storage_alignment",
+            "best_checkpoint/byteorder",
+            "best_checkpoint/data/0"
+          ]
+        },
+        "latest_checkpoint.pth": {
+          "size_bytes": 293536203,
+          "mtime_iso": "2026-10-30T08:17:59+00:00",
+          "sha256": "b87b095c371a475ca3620fa14f07411cd96fca01b8f511ba5664299165a86749",
+          "zip_test": "PASS",
+          "namelist": [
+            "latest_checkpoint/data.pkl",
+            "latest_checkpoint/.format_version",
+            "latest_checkpoint/.storage_alignment",
+            "latest_checkpoint/byteorder",
+            "latest_checkpoint/data/0"
+          ]
+        },
+        "history.csv": {
+          "size_bytes": 1455,
+          "mtime_iso": "2026-10-30T08:18:00+00:00",
+          "sha256": "d97273d7a07575d50eb2690a493b3049084db820c07332d99371c8765c29857b"
+        },
+        "run_summary.json": {
+          "size_bytes": 209,
+          "mtime_iso": "2026-10-30T08:18:00+00:00",
+          "sha256": "3c726e56602ef4ae6e2ed7d7b9414d006fa5d86ac7652114458ca22e6ae253ac"
+        }
+      },
+      "epochs_completed": 40,
+      "best_epoch_matches": true,
+      "nan_or_inf_detected": false,
+      "checkpoints_valid_zip": true,
+      "config_consistent": true,
+      "pass": true,
+      "recorded_best_epoch": 29,
+      "actual_min_val_loss_epoch": 29,
+      "best_val_loss": 0.13522227598648323
+    },
+    "arm_b_inpainted_seed42": {
+      "run_dir": "outputs/benchmark_runs/segmentation_benchmark/arm_b_inpainted_seed42",
+      "exists": true,
+      "files": {
+        "best_checkpoint.pth": {
+          "size_bytes": 97921843,
+          "mtime_iso": "2026-10-30T09:13:00+00:00",
+          "sha256": "659fae55b3045924e4616613d14aef160321148fb4db2bbf56d9a534e487296c",
+          "zip_test": "PASS",
+          "namelist": [
+            "best_checkpoint/data.pkl",
+            "best_checkpoint/.format_version",
+            "best_checkpoint/.storage_alignment",
+            "best_checkpoint/byteorder",
+            "best_checkpoint/data/0"
+          ]
+        },
+        "latest_checkpoint.pth": {
+          "size_bytes": 293536203,
+          "mtime_iso": "2026-10-30T09:24:41+00:00",
+          "sha256": "d7f48c275e6f73b29b5d0a95bf9eea885294e29bfce4bfa346cc09100e248c28",
+          "zip_test": "PASS",
+          "namelist": [
+            "latest_checkpoint/data.pkl",
+            "latest_checkpoint/.format_version",
+            "latest_checkpoint/.storage_alignment",
+            "latest_checkpoint/byteorder",
+            "latest_checkpoint/data/0"
+          ]
+        },
+        "history.csv": {
+          "size_bytes": 1458,
+          "mtime_iso": "2026-10-30T09:24:41+00:00",
+          "sha256": "9b8d806ccb708e8584dac88bb6439fd40a73241ddbb2acc93af7d2df03229c91"
+        },
+        "run_summary.json": {
+          "size_bytes": 214,
+          "mtime_iso": "2026-10-30T09:24:41+00:00",
+          "sha256": "65f6556eeaed6644d0ca0b1750f136141638846ca178700c9c0604389f9f65d8"
+        }
+      },
+      "epochs_completed": 40,
+      "best_epoch_matches": true,
+      "nan_or_inf_detected": false,
+      "checkpoints_valid_zip": true,
+      "config_consistent": true,
+      "pass": true,
+      "recorded_best_epoch": 33,
+      "actual_min_val_loss_epoch": 33,
+      "best_val_loss": 0.1338932498505241
+    },
+    "arm_c_masked_seed42": {
+      "run_dir": "outputs/benchmark_runs/segmentation_benchmark/arm_c_masked_seed42",
+      "exists": true,
+      "files": {
+        "best_checkpoint.pth": {
+          "size_bytes": 97921843,
+          "mtime_iso": "2026-10-30T09:36:25+00:00",
+          "sha256": "2501e591c0d7fa8c579e2c1cfbc07f53ea45ac8ca2f3fdecf458b7e301edc945",
+          "zip_test": "PASS",
+          "namelist": [
+            "best_checkpoint/data.pkl",
+            "best_checkpoint/.format_version",
+            "best_checkpoint/.storage_alignment",
+            "best_checkpoint/byteorder",
+            "best_checkpoint/data/0"
+          ]
+        },
+        "latest_checkpoint.pth": {
+          "size_bytes": 293536203,
+          "mtime_iso": "2026-10-30T09:39:21+00:00",
+          "sha256": "31392ee8c7df77eb59a65e55c4c9fdcfacbcd8e380ec0b1d0e3f35ee054a4be0",
+          "zip_test": "PASS",
+          "namelist": [
+            "latest_checkpoint/data.pkl",
+            "latest_checkpoint/.format_version",
+            "latest_checkpoint/.storage_alignment",
+            "latest_checkpoint/byteorder",
+            "latest_checkpoint/data/0"
+          ]
+        },
+        "history.csv": {
+          "size_bytes": 1453,
+          "mtime_iso": "2026-10-30T09:39:21+00:00",
+          "sha256": "8f3a3a5fb35b57c4323c4d2a46e19d90602d1f4aacd4d05475b82ecc21ce3952"
+        },
+        "run_summary.json": {
+          "size_bytes": 210,
+          "mtime_iso": "2026-10-30T09:39:21+00:00",
+          "sha256": "4a7baadc47199ef59fa4daffa0fe37f35a498a0fbe51389476301e77810561ca"
+        }
+      },
+      "epochs_completed": 40,
+      "best_epoch_matches": true,
+      "nan_or_inf_detected": false,
+      "checkpoints_valid_zip": true,
+      "config_consistent": true,
+      "pass": true,
+      "recorded_best_epoch": 32,
+      "actual_min_val_loss_epoch": 32,
+      "best_val_loss": 0.131918056230796
+    },
+    "arm_a_raw_seed1337": {
+      "run_dir": "outputs/benchmark_runs/segmentation_benchmark/arm_a_raw_seed1337",
+      "exists": true,
+      "files": {
+        "best_checkpoint.pth": {
+          "size_bytes": 97921843,
+          "mtime_iso": "2026-11-01T10:38:00+00:00",
+          "sha256": "fce02f1fbd7718b3295b5626cadce35da1885c65a21db110ad8a9ec869615b95",
+          "zip_test": "PASS",
+          "namelist": [
+            "best_checkpoint/data.pkl",
+            "best_checkpoint/.format_version",
+            "best_checkpoint/.storage_alignment",
+            "best_checkpoint/byteorder",
+            "best_checkpoint/data/0"
+          ]
+        },
+        "latest_checkpoint.pth": {
+          "size_bytes": 293536203,
+          "mtime_iso": "2026-11-01T10:43:48+00:00",
+          "sha256": "11403ca68391b6548ac1cfee1d4a11aac348cd2acb681c221eeaffe8d12f1a1d",
+          "zip_test": "PASS",
+          "namelist": [
+            "latest_checkpoint/data.pkl",
+            "latest_checkpoint/.format_version",
+            "latest_checkpoint/.storage_alignment",
+            "latest_checkpoint/byteorder",
+            "latest_checkpoint/data/0"
+          ]
+        },
+        "history.csv": {
+          "size_bytes": 1452,
+          "mtime_iso": "2026-11-01T10:43:48+00:00",
+          "sha256": "3fe220fd6df0c5f506c8cc7539f8c40fcda8414d8e180d0141163e187ca6b6ea"
+        },
+        "run_summary.json": {
+          "size_bytes": 211,
+          "mtime_iso": "2026-11-01T10:43:48+00:00",
+          "sha256": "24ad11e60767aaba1bff22f612b04be21b3c6ed8468a5c06a18beb162ab19651"
+        }
+      },
+      "epochs_completed": 40,
+      "best_epoch_matches": true,
+      "nan_or_inf_detected": false,
+      "checkpoints_valid_zip": true,
+      "config_consistent": true,
+      "pass": true,
+      "recorded_best_epoch": 23,
+      "actual_min_val_loss_epoch": 23,
+      "best_val_loss": 0.12798377361736799
+    },
+    "arm_b_inpainted_seed1337": {
+      "run_dir": "outputs/benchmark_runs/segmentation_benchmark/arm_b_inpainted_seed1337",
+      "exists": true,
+      "files": {
+        "best_checkpoint.pth": {
+          "size_bytes": 97921843,
+          "mtime_iso": "2026-11-01T11:29:52+00:00",
+          "sha256": "49e3f302232ab60ebd050e3a95a72fef9998a739ebdf6ad765a2a28a696d7cd2",
+          "zip_test": "PASS",
+          "namelist": [
+            "best_checkpoint/data.pkl",
+            "best_checkpoint/.format_version",
+            "best_checkpoint/.storage_alignment",
+            "best_checkpoint/byteorder",
+            "best_checkpoint/data/0"
+          ]
+        },
+        "latest_checkpoint.pth": {
+          "size_bytes": 293536203,
+          "mtime_iso": "2026-11-01T11:47:24+00:00",
+          "sha256": "121e025439a0829df1e7ca4dd51b7041482509b904b33af4de044099e51e4ec1",
+          "zip_test": "PASS",
+          "namelist": [
+            "latest_checkpoint/data.pkl",
+            "latest_checkpoint/.format_version",
+            "latest_checkpoint/.storage_alignment",
+            "latest_checkpoint/byteorder",
+            "latest_checkpoint/data/0"
+          ]
+        },
+        "history.csv": {
+          "size_bytes": 1451,
+          "mtime_iso": "2026-11-01T11:47:24+00:00",
+          "sha256": "3f44238685002ab9837da0d298708bbb2f6532f57102fa3744f886a334129efc"
+        },
+        "run_summary.json": {
+          "size_bytes": 216,
+          "mtime_iso": "2026-11-01T11:47:24+00:00",
+          "sha256": "85cc158393202586d113b7a9fa6d0cfcbf86772cc6afa86d198dad32905623cd"
+        }
+      },
+      "epochs_completed": 40,
+      "best_epoch_matches": true,
+      "nan_or_inf_detected": false,
+      "checkpoints_valid_zip": true,
+      "config_consistent": true,
+      "pass": true,
+      "recorded_best_epoch": 29,
+      "actual_min_val_loss_epoch": 29,
+      "best_val_loss": 0.1296553870565013
+    },
+    "arm_c_masked_seed1337": {
+      "run_dir": "outputs/benchmark_runs/segmentation_benchmark/arm_c_masked_seed1337",
+      "exists": true,
+      "files": {
+        "best_checkpoint.pth": {
+          "size_bytes": 97921843,
+          "mtime_iso": "2026-11-01T12:01:53+00:00",
+          "sha256": "b7de7e179073a4f1c8ddb27f80ebd769d3c4cf67f4795cc709bb8c6aba3b14f4",
+          "zip_test": "PASS",
+          "namelist": [
+            "best_checkpoint/data.pkl",
+            "best_checkpoint/.format_version",
+            "best_checkpoint/.storage_alignment",
+            "best_checkpoint/byteorder",
+            "best_checkpoint/data/0"
+          ]
+        },
+        "latest_checkpoint.pth": {
+          "size_bytes": 293536203,
+          "mtime_iso": "2026-11-01T12:01:53+00:00",
+          "sha256": "5e60c207f338d313e9e367bd51247f02a0dbdfb4f26510c1311898d27c928d3a",
+          "zip_test": "PASS",
+          "namelist": [
+            "latest_checkpoint/data.pkl",
+            "latest_checkpoint/.format_version",
+            "latest_checkpoint/.storage_alignment",
+            "latest_checkpoint/byteorder",
+            "latest_checkpoint/data/0"
+          ]
+        },
+        "history.csv": {
+          "size_bytes": 1454,
+          "mtime_iso": "2026-11-01T12:01:53+00:00",
+          "sha256": "39f6e714aee34172584b74c547e86287c4d0cf620e36a48c949d8763e2eaa33a"
+        },
+        "run_summary.json": {
+          "size_bytes": 214,
+          "mtime_iso": "2026-11-01T12:01:53+00:00",
+          "sha256": "cf31fa97feff606df60172585fbe5e08141a08fad85f25b5190880181a73688d"
+        }
+      },
+      "epochs_completed": 40,
+      "best_epoch_matches": true,
+      "nan_or_inf_detected": false,
+      "checkpoints_valid_zip": true,
+      "config_consistent": true,
+      "pass": true,
+      "recorded_best_epoch": 40,
+      "actual_min_val_loss_epoch": 40,
+      "best_val_loss": 0.14047805886519582
+    },
+    "arm_a_raw_seed2026": {
+      "run_dir": "outputs/benchmark_runs/segmentation_benchmark/arm_a_raw_seed2026",
+      "exists": true,
+      "files": {
+        "best_checkpoint.pth": {
+          "size_bytes": 97921843,
+          "mtime_iso": "2026-11-01T12:07:20+00:00",
+          "sha256": "3fb3d411a524b805fb8d38b1939afdb6911e157863995402f2ddd1a9cff51a41",
+          "zip_test": "PASS",
+          "namelist": [
+            "best_checkpoint/data.pkl",
+            "best_checkpoint/.format_version",
+            "best_checkpoint/.storage_alignment",
+            "best_checkpoint/byteorder",
+            "best_checkpoint/data/0"
+          ]
+        },
+        "latest_checkpoint.pth": {
+          "size_bytes": 293536203,
+          "mtime_iso": "2026-11-01T12:15:32+00:00",
+          "sha256": "780ebf99cbc03985157beb0112e8f311aa28a21d1c23d78fde9a28cfe115f46f",
+          "zip_test": "PASS",
+          "namelist": [
+            "latest_checkpoint/data.pkl",
+            "latest_checkpoint/.format_version",
+            "latest_checkpoint/.storage_alignment",
+            "latest_checkpoint/byteorder",
+            "latest_checkpoint/data/0"
+          ]
+        },
+        "history.csv": {
+          "size_bytes": 1463,
+          "mtime_iso": "2026-11-01T12:15:33+00:00",
+          "sha256": "7ce4da25f6d79f665fe8a53366a2e45c816629cb89eefaea0dac35e2a49f5876"
+        },
+        "run_summary.json": {
+          "size_bytes": 211,
+          "mtime_iso": "2026-11-01T12:15:33+00:00",
+          "sha256": "1075650b98239e98f015f3bb68c071d2b65b1bc869ce3c5bad1fd6d526278827"
+        }
+      },
+      "epochs_completed": 40,
+      "best_epoch_matches": true,
+      "nan_or_inf_detected": false,
+      "checkpoints_valid_zip": true,
+      "config_consistent": true,
+      "pass": true,
+      "recorded_best_epoch": 16,
+      "actual_min_val_loss_epoch": 16,
+      "best_val_loss": 0.13224753717842855
+    },
+    "arm_b_inpainted_seed2026": {
+      "run_dir": "outputs/benchmark_runs/segmentation_benchmark/arm_b_inpainted_seed2026",
+      "exists": true,
+      "files": {
+        "best_checkpoint.pth": {
+          "size_bytes": 97921843,
+          "mtime_iso": "2026-11-01T12:42:29+00:00",
+          "sha256": "bd16135fa9c0acb022854b740cafd9fb8607e90ba59a8f57d09f175c245c40b5",
+          "zip_test": "PASS",
+          "namelist": [
+            "best_checkpoint/data.pkl",
+            "best_checkpoint/.format_version",
+            "best_checkpoint/.storage_alignment",
+            "best_checkpoint/byteorder",
+            "best_checkpoint/data/0"
+          ]
+        },
+        "latest_checkpoint.pth": {
+          "size_bytes": 293536203,
+          "mtime_iso": "2026-11-01T13:19:05+00:00",
+          "sha256": "9f7c9ecab8cae6646f5ceb8957164b64e4d020e468f9180dffe0f6d79aa2e700",
+          "zip_test": "PASS",
+          "namelist": [
+            "latest_checkpoint/data.pkl",
+            "latest_checkpoint/.format_version",
+            "latest_checkpoint/.storage_alignment",
+            "latest_checkpoint/byteorder",
+            "latest_checkpoint/data/0"
+          ]
+        },
+        "history.csv": {
+          "size_bytes": 1459,
+          "mtime_iso": "2026-11-01T13:19:05+00:00",
+          "sha256": "c8e1194b39988ce52809d50e6e7c39d092fd3af31b9edb9872f5a3de9207200a"
+        },
+        "run_summary.json": {
+          "size_bytes": 217,
+          "mtime_iso": "2026-11-01T13:19:05+00:00",
+          "sha256": "74d93b3261550b2a91059ec085e8ad7191d4e707c0e3e949716e71ffbb8875b5"
+        }
+      },
+      "epochs_completed": 40,
+      "best_epoch_matches": true,
+      "nan_or_inf_detected": false,
+      "checkpoints_valid_zip": true,
+      "config_consistent": true,
+      "pass": true,
+      "recorded_best_epoch": 17,
+      "actual_min_val_loss_epoch": 17,
+      "best_val_loss": 0.14512637983027257
+    },
+    "arm_c_masked_seed2026": {
+      "run_dir": "outputs/benchmark_runs/segmentation_benchmark/arm_c_masked_seed2026",
+      "exists": true,
+      "files": {
+        "best_checkpoint.pth": {
+          "size_bytes": 97921843,
+          "mtime_iso": "2026-11-01T13:33:14+00:00",
+          "sha256": "9fa4fb896e6988186e874a4df36e88b6cbace58649760cfe2618c866d8e1fa12",
+          "zip_test": "PASS",
+          "namelist": [
+            "best_checkpoint/data.pkl",
+            "best_checkpoint/.format_version",
+            "best_checkpoint/.storage_alignment",
+            "best_checkpoint/byteorder",
+            "best_checkpoint/data/0"
+          ]
+        },
+        "latest_checkpoint.pth": {
+          "size_bytes": 293536203,
+          "mtime_iso": "2026-11-01T13:33:36+00:00",
+          "sha256": "0cc2c56f3ef5e3986d143a093da9222e50857ac34267f6f1840c205379b8ee7e",
+          "zip_test": "PASS",
+          "namelist": [
+            "latest_checkpoint/data.pkl",
+            "latest_checkpoint/.format_version",
+            "latest_checkpoint/.storage_alignment",
+            "latest_checkpoint/byteorder",
+            "latest_checkpoint/data/0"
+          ]
+        },
+        "history.csv": {
+          "size_bytes": 1455,
+          "mtime_iso": "2026-11-01T13:33:36+00:00",
+          "sha256": "5ab780d0dcc39e18e9695145eacff35de03c0ed690f5751d66e62479f5ec3b05"
+        },
+        "run_summary.json": {
+          "size_bytes": 214,
+          "mtime_iso": "2026-11-01T13:33:36+00:00",
+          "sha256": "1daadd0890dd1ac71e1ae5ded8f28f056a01e6b4a004ed469436ff054e3a150b"
+        }
+      },
+      "epochs_completed": 40,
+      "best_epoch_matches": true,
+      "nan_or_inf_detected": false,
+      "checkpoints_valid_zip": true,
+      "config_consistent": true,
+      "pass": true,
+      "recorded_best_epoch": 39,
+      "actual_min_val_loss_epoch": 39,
+      "best_val_loss": 0.13061534946686343
+    }
+  }
+}

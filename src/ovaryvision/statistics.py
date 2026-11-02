@@ -70,6 +70,217 @@ class ComprehensiveComparisonReport(BaseModel):
     mcnemar_test: McNemarResult
 
 
+class ClusterBootstrapResult(BaseModel):
+    """Paired pseudo-patient-cluster bootstrap result with BCa and percentile intervals."""
+    metric_name: str
+    observed_difference: float  # Mean(Arm C) - Mean(Arm B)
+    ci_lower_95: float          # Primary CI lower bound (BCa if valid, else percentile fallback)
+    ci_upper_95: float          # Primary CI upper bound (BCa if valid, else percentile fallback)
+    ci_method: str = "bca"      # 'bca' or 'percentile_fallback'
+    ci_lower_percentile_95: float = 0.0  # Standard unadjusted percentile lower bound
+    ci_upper_percentile_95: float = 0.0  # Standard unadjusted percentile upper bound
+    bca_bias_correction_z0: float = 0.0
+    bca_acceleration_a: float = 0.0
+    bootstrap_mean: float
+    bootstrap_std: float
+    p_value: float
+    num_clusters: int
+    num_samples: int
+    num_resamples: int
+    empty_draws_count: int = 0
+
+
+def paired_cluster_bootstrap_segmentation(
+    scores_c: np.ndarray,
+    scores_b: np.ndarray,
+    cluster_ids: np.ndarray,
+    valid_mask: Optional[np.ndarray] = None,
+    metric_name: str = "dsc",
+    num_resamples: int = 2000,
+    seed: int = 42,
+    max_redraws_per_resample: int = 200,
+) -> ClusterBootstrapResult:
+    """Paired pseudo-patient-cluster bootstrap with multiplicity preservation.
+
+    Preserves cluster resampling multiplicities:
+    When a cluster is drawn `m` times with replacement, all scans in that cluster
+    appear exactly `m` times in the bootstrap sample, contributing `m` times to both
+    numerator and denominator. Duplicate draws are NOT collapsed via set union.
+
+    Edge Case Handling for Conditional Metrics (e.g. LPR):
+    When estimating metrics defined conditionally on sub-populations (such as the caliper
+    overlap cohort for LPR), an iteration where all sampled clusters contain zero valid
+    observations is degenerate (denominator = 0). Imputing an arbitrary constant (0 or 1)
+    is mathematically invalid because it introduces artificial variance and bias.
+    Following conditional bootstrap theory (Davison & Hinkley, 1997, Sec. 3.8), degenerate
+    draws are handled via rejection sampling: any draw with zero valid observations is rejected
+    and redrawn until a valid conditional realization is obtained, guaranteeing exactly
+    `num_resamples` valid draws. The total count of redrawn empty draws is recorded.
+
+    Args:
+        scores_c: Metric values for Arm C (shape N).
+        scores_b: Metric values for Arm B (shape N).
+        cluster_ids: Cluster identifier for each scan (shape N).
+        valid_mask: Optional boolean mask (shape N) indicating eligible scans
+                    (e.g., overlap cohort for LPR). If None, all scans are valid.
+        metric_name: Name of metric (e.g. 'dsc', 'biou_d2', 'lpr').
+        num_resamples: Number of bootstrap iterations (default 2000).
+        seed: Random seed for determinism.
+        max_redraws_per_resample: Maximum allowable consecutive redrawing attempts.
+
+    Returns:
+        ClusterBootstrapResult containing observed difference, 95% BCa/percentile bounds,
+        bootstrap standard error, empirical p-value, sample counts, and empty redraw count.
+    """
+    sc = np.asarray(scores_c, dtype=np.float64)
+    sb = np.asarray(scores_b, dtype=np.float64)
+    clean_cids = []
+    for idx_c, cid in enumerate(cluster_ids):
+        if cid is None or (isinstance(cid, (float, np.floating)) and np.isnan(cid)) or str(cid).lower() in ("nan", "none", ""):
+            clean_cids.append(f"SINGLETON_{idx_c}")
+        else:
+            clean_cids.append(str(cid))
+    cids = np.asarray(clean_cids, dtype=str)
+
+    # 1. Align all inputs to full cohort length
+    n_total = len(sc)
+    if valid_mask is not None:
+        vmask = np.asarray(valid_mask, dtype=bool)
+        if len(vmask) != n_total:
+            raise ValueError(f"valid_mask length ({len(vmask)}) does not match scores length ({n_total})")
+    else:
+        vmask = np.ones(n_total, dtype=bool)
+
+    if not np.any(vmask):
+        raise ValueError(f"No valid observations provided for cluster bootstrap ({metric_name})")
+
+    # Observed point estimate evaluated strictly on valid observations
+    valid_diff = sc[vmask] - sb[vmask]
+    observed_diff = float(np.mean(valid_diff))
+
+    # Identify unique clusters across the full cohort
+    unique_clusters, cluster_inverse = np.unique(cids, return_inverse=True)
+    num_clusters = len(unique_clusters)
+
+    # Pre-calculate per-cluster sum of differences and valid cluster size
+    cluster_diff_sums = np.zeros(num_clusters, dtype=np.float64)
+    cluster_valid_sizes = np.zeros(num_clusters, dtype=np.float64)
+    for k in range(num_clusters):
+        idx = np.where(cluster_inverse == k)[0]
+        # Only valid observations in cluster k contribute to diff sum and size
+        valid_in_k = idx[vmask[idx]]
+        if len(valid_in_k) > 0:
+            cluster_diff_sums[k] = np.sum(sc[valid_in_k] - sb[valid_in_k])
+            cluster_valid_sizes[k] = len(valid_in_k)
+
+    rng = np.random.default_rng(seed)
+    boot_diffs = np.empty(num_resamples, dtype=np.float64)
+    total_empty_draws = 0
+
+    for b in range(num_resamples):
+        redraw_count = 0
+        while True:
+            # Sample cluster indices with replacement (preserves multiplicity)
+            sampled_k = rng.choice(num_clusters, size=num_clusters, replace=True)
+            multiplicities = np.bincount(sampled_k, minlength=num_clusters)
+
+            sampled_total_count = np.sum(multiplicities * cluster_valid_sizes)
+            if sampled_total_count > 0:
+                sampled_total_diff = np.sum(multiplicities * cluster_diff_sums)
+                boot_diffs[b] = sampled_total_diff / sampled_total_count
+                break
+
+            # Handle degenerate draw: redraw cluster sample conditionally
+            redraw_count += 1
+            total_empty_draws += 1
+            if redraw_count > max_redraws_per_resample:
+                raise RuntimeError(
+                    f"Cluster bootstrap for {metric_name} failed: exceeded {max_redraws_per_resample} "
+                    "consecutive redraws due to zero valid observations. Cluster pool too sparse."
+                )
+
+    # 1. Standard empirical percentile interval
+    alpha = 0.05
+    perc_low = float(np.percentile(boot_diffs, 100.0 * (alpha / 2.0)))
+    perc_high = float(np.percentile(boot_diffs, 100.0 * (1.0 - alpha / 2.0)))
+
+    # 2. Bias-Corrected and Accelerated (BCa) adjustment
+    # Bias correction z0 with mid-p tie convention:
+    # prop_less = P(boot < obs) + 0.5 * P(boot == obs)
+    # This prevents artificial bias distortion on tied bootstrap replicates and constant datasets.
+    is_tied = np.isclose(boot_diffs, observed_diff, atol=1e-12)
+    prop_less = float(np.mean(boot_diffs < (observed_diff - 1e-12)) + 0.5 * np.mean(is_tied))
+    # Finite-sample clipping rule to prevent infinite z0: [1/(B+1), B/(B+1)]
+    prop_less = float(np.clip(prop_less, 1.0 / (num_resamples + 1), num_resamples / (num_resamples + 1)))
+    z0 = float(norm.ppf(prop_less))
+
+    # Acceleration a via cluster-level jackknife (leave-one-cluster-out)
+    jack_valid = True
+    jack_diffs = np.zeros(num_clusters, dtype=np.float64)
+    for k in range(num_clusters):
+        jack_count = np.sum(cluster_valid_sizes) - cluster_valid_sizes[k]
+        if jack_count <= 0:
+            jack_valid = False
+            break
+        jack_sum = np.sum(cluster_diff_sums) - cluster_diff_sums[k]
+        jack_diffs[k] = jack_sum / jack_count
+
+    if jack_valid and num_clusters > 1:
+        mean_jack = float(np.mean(jack_diffs))
+        jack_dev = mean_jack - jack_diffs
+        denom = 6.0 * (np.sum(jack_dev ** 2) ** 1.5)
+        a = float(np.sum(jack_dev ** 3) / denom) if denom > 1e-12 else 0.0
+    else:
+        a = 0.0
+
+    z_low = float(norm.ppf(alpha / 2.0))        # -1.95996
+    z_high = float(norm.ppf(1.0 - alpha / 2.0))  # +1.95996
+
+    method_used = "percentile_fallback"
+    ci_low, ci_high = perc_low, perc_high
+
+    if np.isfinite(z0) and np.isfinite(a):
+        denom_low = 1.0 - a * (z0 + z_low)
+        denom_high = 1.0 - a * (z0 + z_high)
+
+        if denom_low > 1e-8 and denom_high > 1e-8:
+            arg_low = z0 + (z0 + z_low) / denom_low
+            arg_high = z0 + (z0 + z_high) / denom_high
+            if np.isfinite(arg_low) and np.isfinite(arg_high):
+                q_low = float(norm.cdf(arg_low))
+                q_high = float(norm.cdf(arg_high))
+                if 0.0 < q_low < q_high < 1.0:
+                    ci_low = float(np.percentile(boot_diffs, 100.0 * q_low))
+                    ci_high = float(np.percentile(boot_diffs, 100.0 * q_high))
+                    method_used = "bca"
+
+    boot_mean = float(np.mean(boot_diffs))
+    boot_std = float(np.std(boot_diffs, ddof=1))
+
+    # Two-sided empirical p-value
+    p_val = 2.0 * min(float(np.mean(boot_diffs <= 0)), float(np.mean(boot_diffs >= 0)))
+    p_val = min(1.0, max(p_val, 1.0 / num_resamples))
+
+    return ClusterBootstrapResult(
+        metric_name=metric_name,
+        observed_difference=observed_diff,
+        ci_lower_95=ci_low,
+        ci_upper_95=ci_high,
+        ci_method=method_used,
+        ci_lower_percentile_95=perc_low,
+        ci_upper_percentile_95=perc_high,
+        bca_bias_correction_z0=z0,
+        bca_acceleration_a=a,
+        bootstrap_mean=boot_mean,
+        bootstrap_std=boot_std,
+        p_value=float(p_val),
+        num_clusters=num_clusters,
+        num_samples=int(np.sum(vmask)),
+        num_resamples=num_resamples,
+        empty_draws_count=total_empty_draws,
+    )
+
+
 def compute_roc_auc(scores: np.ndarray, labels: np.ndarray) -> float:
     """Compute Area Under the Receiver Operating Characteristic curve via Mann-Whitney U statistic.
 
