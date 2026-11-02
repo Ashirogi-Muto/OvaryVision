@@ -1,0 +1,7 @@
+Audit started at 2026-11-01T14:18:57.757331+00:00
+Nine runs audit complete. All passed: True
+Evaluation completeness audit complete. All passed: True
+Per-seed results table saved with 9 rows.
+Seed variability summary table saved with 21 rows.
+Classification benchmark audit complete. Total runs: 18
+Audit completed successfully at 2026-11-01T14:19:12.422925+00:00

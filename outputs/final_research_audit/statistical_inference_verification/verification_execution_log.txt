@@ -1,0 +1,5 @@
+Inference verification started at 2026-11-02T02:40:21.935521+00:00
+Saved full recalculated inferential results to outputs/final_research_audit/statistical_inference_verification/recalculated_inferential_results.csv (21 rows).
+Saved primary family manuscript table to outputs/final_research_audit/statistical_inference_verification/manuscript_table_primary_family.csv (7 rows).
+Saved full 21 comparisons manuscript table to outputs/final_research_audit/statistical_inference_verification/manuscript_table_full_21_comparisons.csv (21 rows).
+Inference verification completed successfully at 2026-11-02T02:40:23.416856+00:00

@@ -1,0 +1,124 @@
+{
+  "audit_name": "evaluation_completeness_audit",
+  "timestamp_utc": "2026-11-01T14:19:12.315865+00:00",
+  "all_evaluations_passed": true,
+  "evaluations": {
+    "seed_42": {
+      "eval_dir": "outputs/benchmark_runs/segmentation_benchmark/seed42_test_evaluation",
+      "exists": true,
+      "files": {
+        "seed42_per_scan_test_metrics.csv": {
+          "size_bytes": 113651,
+          "mtime_iso": "2026-10-30T10:10:48+00:00",
+          "sha256": "97bffd0b1e45cc1efa2f3106ad52aa2b8c51299b55b271b29c69bf543545e1c0"
+        },
+        "seed42_evaluation_summary.json": {
+          "size_bytes": 18946,
+          "mtime_iso": "2026-10-30T10:10:50+00:00",
+          "sha256": "a927b59bfae3bf41c62433c0ce74468912a3d536683536f4383a43e1cbedbb5b"
+        },
+        "seed42_tumour_metrics_summary.csv": {
+          "size_bytes": 1178,
+          "mtime_iso": "2026-10-30T10:10:48+00:00",
+          "sha256": "12c72095ebca26bc01a09dc84d4e18bdb37ffdd778d14e5aef913a42bae4e0a0"
+        },
+        "seed42_normal_ovary_metrics_summary.csv": {
+          "size_bytes": 602,
+          "mtime_iso": "2026-10-30T10:10:48+00:00",
+          "sha256": "e8c45c6f0cb5c910db68fb2f245948cd75e111c4d295b2fbd3a8c87e0a895c26"
+        },
+        "seed42_bootstrap_inferential_report.csv": {
+          "size_bytes": 6121,
+          "mtime_iso": "2026-10-30T10:10:49+00:00",
+          "sha256": "286f49365ead0dd1305ea36fccb7b82c1ec9bf92abfb91ea73dc701c1f3c1687"
+        }
+      },
+      "total_scans": 469,
+      "tumour_scans": 382,
+      "normal_scans": 87,
+      "overlap_scans": 193,
+      "zero_overlap_scans": 189,
+      "lpr_non_null_count": 193,
+      "id_match_manifest": true,
+      "pass": true
+    },
+    "seed_1337": {
+      "eval_dir": "outputs/benchmark_runs/segmentation_benchmark/seed1337_test_evaluation",
+      "exists": true,
+      "files": {
+        "seed1337_per_scan_test_metrics.csv": {
+          "size_bytes": 112367,
+          "mtime_iso": "2026-11-01T13:38:47+00:00",
+          "sha256": "822c39bfe02751a5335c6e0dcceb2d8adfa2218acd6aef09f1bb1ff7e81cb612"
+        },
+        "seed1337_evaluation_summary.json": {
+          "size_bytes": 18950,
+          "mtime_iso": "2026-11-01T13:38:48+00:00",
+          "sha256": "ee7b317d6c555aa5e50a5e46426e8d02d8daf7b46342f8805cf2e9e8134d2fad"
+        },
+        "seed1337_tumour_metrics_summary.csv": {
+          "size_bytes": 1177,
+          "mtime_iso": "2026-11-01T13:38:47+00:00",
+          "sha256": "bd5ff748a898284a94d8a4f9dbda10f31c7ae44f29349855c790d2ba674e104c"
+        },
+        "seed1337_normal_ovary_metrics_summary.csv": {
+          "size_bytes": 572,
+          "mtime_iso": "2026-11-01T13:38:47+00:00",
+          "sha256": "2fff01e5b4edd918b100789142c4fc17f964cb7e6dd575287ea4117ccce971d1"
+        },
+        "seed1337_bootstrap_inferential_report.csv": {
+          "size_bytes": 6152,
+          "mtime_iso": "2026-11-01T13:38:47+00:00",
+          "sha256": "ef55bb70784c27a4a2b3141294013c9f61a4ca42b81cfefa426d650644ff3545"
+        }
+      },
+      "total_scans": 469,
+      "tumour_scans": 382,
+      "normal_scans": 87,
+      "overlap_scans": 193,
+      "zero_overlap_scans": 189,
+      "lpr_non_null_count": 193,
+      "id_match_manifest": true,
+      "pass": true
+    },
+    "seed_2026": {
+      "eval_dir": "outputs/benchmark_runs/segmentation_benchmark/seed2026_test_evaluation",
+      "exists": true,
+      "files": {
+        "seed2026_per_scan_test_metrics.csv": {
+          "size_bytes": 111457,
+          "mtime_iso": "2026-11-01T13:41:11+00:00",
+          "sha256": "985453a31084e7074d3d4bd51808e73ceb994f962b601b1afe663026edd64b9c"
+        },
+        "seed2026_evaluation_summary.json": {
+          "size_bytes": 18919,
+          "mtime_iso": "2026-11-01T13:41:13+00:00",
+          "sha256": "13653359d0a471818aa0f2df998ecef8523eecc64381f049111398d2cc83ac0a"
+        },
+        "seed2026_tumour_metrics_summary.csv": {
+          "size_bytes": 1181,
+          "mtime_iso": "2026-11-01T13:41:11+00:00",
+          "sha256": "d8d770fc947d81f51ab1aa41c207b11ed542d9e8631b41dfbf8eff8a1bc59062"
+        },
+        "seed2026_normal_ovary_metrics_summary.csv": {
+          "size_bytes": 575,
+          "mtime_iso": "2026-11-01T13:41:11+00:00",
+          "sha256": "d9e86e8e4040bbe63b915d8ab8d16bf8041b3704b1226bb543fe65860dafe0f0"
+        },
+        "seed2026_bootstrap_inferential_report.csv": {
+          "size_bytes": 6114,
+          "mtime_iso": "2026-11-01T13:41:12+00:00",
+          "sha256": "d6427c5ebcbf0fd51c758f9bf071fc9f0fb751376b7a6228b61e6deebb963245"
+        }
+      },
+      "total_scans": 469,
+      "tumour_scans": 382,
+      "normal_scans": 87,
+      "overlap_scans": 193,
+      "zero_overlap_scans": 189,
+      "lpr_non_null_count": 193,
+      "id_match_manifest": true,
+      "pass": true
+    }
+  }
+}
